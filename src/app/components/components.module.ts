@@ -15,6 +15,13 @@ import { NotificationComponent } from './notification/notification.component';
 import { NgbdModalComponent } from './modal/modal.component';
 import { NgbdModalContent } from './modal/modal.component';
 import { MapComponent } from './map/map.component';
+import { LandingComponent } from './landing/landing.component';
+import { AccommodationsComponent } from './accommodations/accommodations.component';
+import { ServicesComponent } from './services/services.component';
+import { LocationComponent } from './location/location.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
     imports: [
@@ -34,7 +41,14 @@ import { MapComponent } from './map/map.component';
         NotificationComponent,
         NgbdModalComponent,
         NgbdModalContent,
-        MapComponent
+        MapComponent,
+        LandingComponent,
+        AccommodationsComponent,
+        ServicesComponent,
+        LocationComponent,
+        GalleryComponent,
+        ReviewsComponent,
+        ContactComponent
     ],
     entryComponents: [NgbdModalContent],
     exports:[ ComponentsComponent ]

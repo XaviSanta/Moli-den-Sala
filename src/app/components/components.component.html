@@ -1,642 +1,369 @@
 <div class="wrapper">
-    <div class="page-header section-dark" style="background-image: url('assets/img/hivern12.jpg')">
-        <div class="filter"></div>
-        <div class="content-center">
-            <div class="container">
-                <div class="title-brand">
-                    <div class="angular-logo">
-                        <img src="assets/img/angular2-logo.png" alt="">
+  <app-landing></app-landing>
+  <div class="main">
+    <app-accommodations></app-accommodations>
+    <app-services></app-services>
+    <app-location></app-location>
+    <app-gallery></app-gallery>
+    <app-reviews></app-reviews>
+    <app-contact></app-contact>
+    <div class="section" id="carousel">
+      <div class="container">
+        <div class="tim-title">
+          <h3>Carousel</h3>
+        </div>
+        <div class="row">
+          <div class="col-md-8 mr-auto ml-auto">
+            <div class="card page-carousel">
+              <ngb-carousel>
+                <ng-template ngbSlide>
+                  <img src="./assets/img/soroush-karimi.jpg" alt="Random first slide">
+                  <div class="carousel-caption">
+                    <p>Somewhere</p>
+                  </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                  <img src="./assets/img/federico-beccari.jpg" alt="Random second slide">
+                  <div class="carousel-caption">
+                    <p>Somewhere else</p>
+                  </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                  <img src="./assets/img/joshua-stannard.jpg" alt="Random third slide">
+                  <div class="carousel-caption">
+                    <p>Here it is</p>
+                  </div>
+                </ng-template>
+              </ngb-carousel>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-basicelements></app-basicelements>
+    <app-navigation></app-navigation>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="tim-title">
+              <h3>Progress Bar</h3>
+              <br />
+            </div>
+            <ngb-progressbar type="success" [value]="25">25</ngb-progressbar><br>
+            <ngb-progressbar type="info" [value]="50">Copying file <b>2 of 4</b>...</ngb-progressbar><br>
+            <ngb-progressbar type="warning" [value]="75" [striped]="true" [animated]="true"><i>50%</i></ngb-progressbar>
+            <br>
+            <ngb-progressbar type="danger" [value]="100" [striped]="true">Completed!</ngb-progressbar>
+
+          </div>
+          <div class="col-md-6">
+            <div class="tim-title">
+              <h3>Pagination</h3>
+              <br />
+            </div>
+            <ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+            <br />
+            <ngb-pagination [collectionSize]="100" [(page)]="page1" [maxSize]="5" [rotate]="true"></ngb-pagination>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-6">
+            <div class="tim-title">
+              <h3>Navigation Tabs</h3>
+            </div>
+
+            <div class="nav-tabs-navigation">
+              <div class="nav-tabs-wrapper">
+                <ngb-tabset [justify]="'center'">
+                  <ngb-tab title="Home">
+                    <ng-template ngbTabContent>
+                      <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient. With a smooth
+                        metal surface that seamlessly meets the new Retina HD display.</p>
+                    </ng-template>
+                  </ngb-tab>
+                  <ngb-tab title="Profile">
+                    <ng-template ngbTabContent>
+                      <p>Here is your profile.</p>
+                    </ng-template>
+                  </ngb-tab>
+                  <ngb-tab title="Messages">
+                    <ng-template ngbTabContent>
+                      <p>Here are your messages.</p>
+                    </ng-template>
+                  </ngb-tab>
+                </ngb-tabset>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+            <div class="tim-title">
+              <h3>Labels</h3>
+            </div>
+            <span class="label label-default">Default</span>
+            <span class="label label-primary">Primary</span>
+            <span class="label label-info">Info</span>
+            <span class="label label-success">Success</span>
+            <span class="label label-warning">Warning</span>
+            <span class="label label-danger">Danger</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section-notifications" id="notifications">
+      <div class="container">
+        <div class="tim-title">
+          <h3>Notification</h3>
+        </div>
+      </div>
+      <app-notification></app-notification>
+    </div>
+    <app-typography></app-typography>
+    <div class="section javascript-components">
+      <div class="container">
+        <div class="tim-title">
+          <h2>Angular Native Components</h2>
+        </div>
+        <div class="row" id="modals">
+          <div class="col-md-6">
+            <div class="tim-title">
+              <h3>Modal</h3>
+            </div>
+            <app-modal-component></app-modal-component>
+          </div>
+          <div class="col-md-6">
+            <div class="tim-title">
+              <h3>Popovers</h3>
+            </div>
+
+            <button type="button" class="btn btn-outline-danger btn-round" placement="right"
+              ngbPopover="Here will be some very useful information about this popover."
+              popoverTitle="Popover on right">
+              on right
+            </button>
+
+            <button type="button" class="btn btn-outline-danger btn-round" placement="top"
+              ngbPopover="Here will be some very useful information about this popover." popoverTitle="Popover on top">
+              on top
+            </button>
+
+            <button type="button" class="btn btn-outline-danger btn-round" placement="left"
+              ngbPopover="Here will be some very useful information about this popover." popoverTitle="Popover on left">
+              on left
+            </button>
+
+            <button type="button" class="btn btn-outline-danger btn-round" placement="bottom"
+              ngbPopover="Here will be some very useful information about this popover."
+              popoverTitle="Popover on bottom">
+              on bottom
+            </button>
+
+          </div>
+          <br />
+          <div class="col-md-6">
+            <div class="tim-title">
+              <h3>Datepicker</h3>
+            </div>
+            <div class="row">
+              <div class='col-sm-6'>
+                <form class="form-inline">
+                  <div class="form-group">
+                    <div class="input-group date" [ngClass]="{'input-group-focus':focus===true}">
+                      <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
+                        #d="ngbDatepicker" (click)="d.toggle()" (focus)="focus=true" (blur)="focus=false" />
+                      <div class="input-group-append">
+                        <span class="glyphicon glyphicon-calendar input-group-text">
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </span>
+                      </div>
                     </div>
-                    <h1 class="presentation-title">Molí d'en Sala</h1>
-                    <div class="fog-low" style="opacity: 15%">
-                        <img src="assets/img/fog-low.png" alt="">
-                    </div>
-                    <div class="fog-low right" style="opacity: 15%;">
-                        <img src="assets/img/fog-low.png" alt="">
-                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tim-title">
+              <h3>Tooltips</h3>
+            </div>
+
+            <button type="button" class="btn btn-outline-danger btn-round" placement="right"
+              ngbTooltip="Tooltip on right">
+              on right
+            </button>
+            <button type="button" class="btn btn-outline-danger btn-round" placement="left"
+              ngbTooltip="Tooltip on left">
+              on left
+            </button>
+            <button type="button" class="btn btn-outline-danger btn-round" placement="top" ngbTooltip="Tooltip on top">
+              on top
+            </button>
+            <button type="button" class="btn btn-outline-danger btn-round" placement="bottom"
+              ngbTooltip="Tooltip on bottom">
+              on bottom
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section section-dark section-nucleo-icons">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <h2 class="title">Nucleo Icons</h2><br />
+            <p class="description">
+              Now UI Kit comes with 100 custom icons made by our friends from NucleoApp. The official package contains
+              over 2.100 thin icons which are looking great in combination with Now UI Kit Make sure you check all of
+              them and use those that you like the most.
+            </p><br />
+            <a [routerLink]="['/nucleoicons']" class="btn btn-danger btn-round">View Demo Icons</a>
+            <a href="https://nucleoapp.com/?ref=1712" class="btn btn-outline-danger btn-round" target="_blank">View All
+              Icons</a>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="icons-container">
+              <i class="nc-icon nc-time-alarm"></i>
+              <i class="nc-icon nc-atom"></i>
+              <i class="nc-icon nc-camera-compact"></i>
+              <i class="nc-icon nc-watch-time"></i>
+              <i class="nc-icon nc-key-25"></i>
+              <i class="nc-icon nc-diamond"></i>
+              <i class="nc-icon nc-user-run"></i>
+              <i class="nc-icon nc-layout-11"></i>
+              <i class="nc-icon nc-badge"></i>
+              <i class="nc-icon nc-bulb-63"></i>
+              <i class="nc-icon nc-favourite-28"></i>
+              <i class="nc-icon nc-planet"></i>
+              <i class="nc-icon nc-tie-bow"></i>
+              <i class="nc-icon nc-zoom-split"></i>
+              <i class="nc-icon nc-cloud-download-93"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto text-center">
+            <h2 class="title">Completed with examples</h2>
+            <p class="description">The kit comes with three pre-built pages to help you get started faster. You can
+              change the text and images and you're good to go. More importantly, looking at them will give you a
+              picture of what you can built with this powerful kit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section-image section-login" style="background-image: url('assets/img/login-image.jpg');">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
+            <div class="card card-register">
+              <h3 class="title">Welcome</h3>
+              <div class="social-line text-center">
+                <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
+                  <i class="fa fa-facebook-square"></i>
+                </a>
+                <a href="#pablo" class="btn btn-neutral btn-google btn-just-icon">
+                  <i class="fa fa-google-plus"></i>
+                </a>
+                <a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </div>
+              <form class="register-form">
+                <label>Email</label>
+                <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="nc-icon nc-email-85"></i>
+                    </span>
+                  </div>
+
+                  <input type="text" class="form-control" placeholder="Email" (focus)="focus=true" (blur)="focus=false">
                 </div>
 
-                <h2 class="presentation-subtitle text-center">Allotjaments rurals</h2>
+                <label>Password</label>
+                <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="nc-icon nc-key-25"></i>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Password" (focus)="focus1=true"
+                    (blur)="focus1=false">
+                </div>
+                <button class="btn btn-danger btn-block btn-round">Register</button>
+              </form>
+              <div class="forgot">
+                <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
+              </div>
             </div>
+            <div class="col text-center" routerLinkActive="active">
+              <a [routerLink]="['/signup']" class="btn btn-outline-neutral btn-round btn-lg">View Register Page</a>
+            </div>
+          </div>
         </div>
-        <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
-        <!-- <h6 class=" category-absolute ml-auto mr-auto">Designed and coded by
-        <!-- <h6 class="category category-absolute">Designed and coded by -->
-
-            <!-- <a href="https://www.creative-tim.com" target="_blank">
-                <img src="assets/img/creative-tim-white-slim2.png" class="creative-tim-logo">
+      </div>
+    </div>
+    <div class="section section-dark">
+      <div class="container">
+        <div class="row example-page">
+          <div class="col-md-6 text-center" routerLinkActive="active">
+            <a [routerLink]="['/landing']">
+              <img src="./assets/img/examples/landing-page.JPG" alt="Rounded Image" class="img-rounded img-responsive"
+                style="width: 100%">
+              <a [routerLink]="['/landing']" class="btn btn-outline-neutral btn-round">Landing Page</a>
             </a>
-        </h6> --> 
+          </div>
+
+          <div class="col-md-6 text-center" routerLinkActive="active">
+            <a [routerLink]="['/user-profile']">
+              <img src="./assets/img/examples/profile-page.JPG" alt="Rounded Image" class="img-rounded img-responsive"
+                style="width: 100%">
+              <a [routerLink]="['/user-profile']" class="btn btn-outline-neutral btn-round">Profile Page</a>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="main">
-      <div class="section" style="background-color: aliceblue;" id="accommodations">
-        <div class="container">
-          <div class="tim-title">
-            <h2>Alojamientos</h2>
+    <div class="section">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto text-center">
+            <h2 class="title">Do you like what you see?</h2>
+            <p class="description">Cause if you do, it can be yours for Free. Hit the button below and download it.
+              Start a new project or give an old Bootstrap 4 project a new look.</p>
           </div>
-          <div class="row">
-            <div class="col-lg-5 col-md-6 col-sm-12 ml-auto mr-auto">
-              <div class="card bg-light">
-                <img height="295px" class="card-img-top img-rounded " src="../../assets/img/moli/petita1.jpg" alt="la petita">
-                <div class="card-body">
-                  <h6 class="card-title">La petita del molí</h6>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <p class="card-text"><svg height="21" viewBox="-77 -19 629 629.33435" width="21" xmlns="http://www.w3.org/2000/svg"><path d="m233.371094 294.5c81.328125 0 147.25-65.925781 147.25-147.25 0-81.320312-65.921875-147.25-147.25-147.25-81.320313 0-147.25 65.929688-147.25 147.25.0625 81.296875 65.953125 147.1875 147.25 147.25zm0-269.542969c67.542968 0 122.292968 54.75 122.292968 122.292969s-54.75 122.292969-122.292968 122.292969c-67.535156 0-122.292969-54.75-122.292969-122.292969.113281-67.492188 54.800781-122.183594 122.292969-122.292969zm0 0"/><path d="m233.371094 331.3125c-64.011719 0-123.539063 24.832031-167.710938 70.007812-44.800781 45.796876-69.386718 108.3125-69.386718 176.203126.019531 6.882812 5.597656 12.457031 12.480468 12.476562h449.238282c6.886718-.019531 12.457031-5.59375 12.476562-12.476562 0-67.761719-24.582031-130.40625-69.378906-176.078126-44.175782-45.175781-103.699219-70.132812-167.71875-70.132812zm-211.886719 233.730469c2.746094-56.402344 24.582031-107.941407 61.894531-146.128907 39.433594-40.308593 92.71875-62.515624 149.871094-62.515624s110.4375 22.207031 149.867188 62.515624c37.4375 38.1875 59.152343 89.726563 61.898437 146.128907zm0 0"/></svg>
-                        6 personas
-                      </p>
-                      <p class="card-text">
-                        <svg id="Capa_1" enable-background="new 0 0 492.001 492.001" height="21" viewBox="0 0 492.001 492.001" width="22" xmlns="http://www.w3.org/2000/svg"><path d="m388.286 492.001c3.314 0 6-2.686 6-6v-385.715c0-55.386-44.899-100.286-100.286-100.286s-100.286 44.9-100.286 100.286v14.915h-75c-11.592.013-20.987 9.408-21 21v6c.013 11.592 9.408 20.987 21 21h162c11.592-.013 20.987-9.408 21-21v-6c-.013-11.592-9.408-20.987-21-21h-75v-14.915c0-48.759 39.527-88.286 88.286-88.286s88.286 39.527 88.286 88.286v385.715c0 3.314 2.687 6 6 6zm-98.572-355.8v6c-.006 4.968-4.032 8.995-9 9h-162c-4.968-.005-8.994-4.032-9-9v-6c.006-4.968 4.032-8.994 9-9h162c4.969.006 8.995 4.032 9 9z"/><path d="m205.714 183.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v12c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m241.714 183.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v36c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m277.714 183.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v12c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m133.714 183.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v12c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m169.714 183.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v36c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m205.714 219.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v72c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m241.714 243.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v24c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m277.714 219.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v72c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m133.714 219.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v72c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m169.714 243.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v24c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m199.714 321.848c-3.314 0-6 2.686-6 6v12c0 3.314 2.686 6 6 6s6-2.686 6-6v-12c0-3.314-2.686-6-6-6z"/><path d="m235.714 285.848c-3.314 0-6 2.686-6 6v48c0 3.314 2.686 6 6 6s6-2.686 6-6v-48c0-3.314-2.686-6-6-6z"/><path d="m271.714 321.848c-3.314 0-6 2.686-6 6v12c0 3.314 2.686 6 6 6s6-2.686 6-6v-12c0-3.314-2.686-6-6-6z"/><path d="m127.714 321.848c-3.314 0-6 2.686-6 6v12c0 3.314 2.686 6 6 6s6-2.686 6-6v-12c0-3.314-2.686-6-6-6z"/><path d="m163.714 285.848c-3.314 0-6 2.686-6 6v48c0 3.314 2.686 6 6 6s6-2.686 6-6v-48c0-3.314-2.686-6-6-6z"/></svg>
-                        1 baño
-                      </p>
-                    </div>
-                    <div class="col-md-6">
-                      <p class="card-text">
-                        <svg id="Layer_1" height="22" viewBox="0 0 512 512" width="22" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1">
-                          <path d="m471.242 204.163h-50.457v-110.869a26.029 26.029 0 0 0 -26-26h-277.57a26.029 26.029 0 0 0 -26 26v110.869h-50.457a30.792 30.792 0 0 0 -30.758 30.757v203.786a6 6 0 0 0 12 0v-82.66h468v82.66a6 6 0 0 0 12 0v-203.786a30.792 30.792 0 0 0 -30.758-30.757zm-368.027-110.869a14.016 14.016 0 0 1 14-14h277.57a14.016 14.016 0 0 1 14 14v110.869h-20.653v-31a30.793 30.793 0 0 0 -30.758-30.763h-60.274a30.793 30.793 0 0 0 -30.758 30.758v31h-20.686v-31a30.793 30.793 0 0 0 -30.756-30.758h-60.274a30.793 30.793 0 0 0 -30.758 30.758v31h-20.653zm175.129 110.869v-31a18.779 18.779 0 0 1 18.756-18.763h60.272a18.779 18.779 0 0 1 18.758 18.758v31zm-142.476 0v-31a18.779 18.779 0 0 1 18.758-18.763h60.274a18.779 18.779 0 0 1 18.758 18.758v31zm-95.11 12h430.484a18.779 18.779 0 0 1 18.758 18.757v71.135h-468v-71.135a18.779 18.779 0 0 1 18.758-18.757zm-18.758 127.883v-25.991h468v25.991z"/></svg>
-                        1 matrimonio</p>
-                      <p class="card-text">
-                        <svg id="Layer_1" height="21" viewBox="0 0 512 512" width="21" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m471.242 182.2h-15.642v-101.2a26.031 26.031 0 0 0 -26-26h-347.2a26.031 26.031 0 0 0 -26 26v101.2h-15.642c-16.958 0-30.758 15.463-30.758 34.469v234.331a6 6 0 0 0 12 0v-95.948h468v95.948a6 6 0 0 0 12 0v-234.331c0-19.006-13.8-34.469-30.758-34.469zm-402.842-101.2a14.016 14.016 0 0 1 14-14h347.2a14.016 14.016 0 0 1 14 14v101.2h-73.73v-36.549c0-19.006-16.233-34.468-36.187-34.468h-155.366c-19.954 0-36.187 15.462-36.187 34.468v36.549h-73.73zm85.73 101.2v-36.549c0-12.389 10.85-22.468 24.187-22.468h155.366c13.337 0 24.187 10.079 24.187 22.468v36.549zm-113.372 12h430.484c10.343 0 18.758 10.08 18.758 22.469v82.7h-468v-82.7c0-12.389 8.415-22.469 18.758-22.469zm-18.758 148.852v-31.686h468v31.686z"/></svg>
-                        2 individuales</p>
-                      <p class="card-text">
-                        <svg id="Layer_1" height="21" viewBox="0 0 512 512" width="21" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m471.242 182.2h-15.642v-101.2a26.031 26.031 0 0 0 -26-26h-347.2a26.031 26.031 0 0 0 -26 26v101.2h-15.642c-16.958 0-30.758 15.463-30.758 34.469v234.331a6 6 0 0 0 12 0v-95.948h468v95.948a6 6 0 0 0 12 0v-234.331c0-19.006-13.8-34.469-30.758-34.469zm-402.842-101.2a14.016 14.016 0 0 1 14-14h347.2a14.016 14.016 0 0 1 14 14v101.2h-73.73v-36.549c0-19.006-16.233-34.468-36.187-34.468h-155.366c-19.954 0-36.187 15.462-36.187 34.468v36.549h-73.73zm85.73 101.2v-36.549c0-12.389 10.85-22.468 24.187-22.468h155.366c13.337 0 24.187 10.079 24.187 22.468v36.549zm-113.372 12h430.484c10.343 0 18.758 10.08 18.758 22.469v82.7h-468v-82.7c0-12.389 8.415-22.469 18.758-22.469zm-18.758 148.852v-31.686h468v31.686z"/></svg>
-                        1 supletoria</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer">
-                  <a href="#" class="btn btn-round btn-primary float left">Ver disponibilidad</a>
-                  <a href="#" class="btn btn-round btn-outline-primary">Galería</a>
-                  <button class="btn btn-info btn-link float-right" 
-                    placement="top" 
-                    ngbTooltip="95€ por noche" 
-                    style="cursor: help;">
-                    95€</button>
-                </div>
-              </div>
-            </div>
-            <!-- https://www.flaticon.com/ -->
-            <div class="col-lg-5 col-md-6 col-sm-12 ml-auto mr-auto">
-              <div class="card bg-light border-dark">
-                <img height="295px" class="card-img-top img-rounded img-responsive" src="../../assets/img/hivern1.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h6 class="card-title">El Molí Vell d'en Sala</h6>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <p class="card-text"><svg height="21" viewBox="-77 -19 629 629.33435" width="21" xmlns="http://www.w3.org/2000/svg"><path d="m233.371094 294.5c81.328125 0 147.25-65.925781 147.25-147.25 0-81.320312-65.921875-147.25-147.25-147.25-81.320313 0-147.25 65.929688-147.25 147.25.0625 81.296875 65.953125 147.1875 147.25 147.25zm0-269.542969c67.542968 0 122.292968 54.75 122.292968 122.292969s-54.75 122.292969-122.292968 122.292969c-67.535156 0-122.292969-54.75-122.292969-122.292969.113281-67.492188 54.800781-122.183594 122.292969-122.292969zm0 0"/><path d="m233.371094 331.3125c-64.011719 0-123.539063 24.832031-167.710938 70.007812-44.800781 45.796876-69.386718 108.3125-69.386718 176.203126.019531 6.882812 5.597656 12.457031 12.480468 12.476562h449.238282c6.886718-.019531 12.457031-5.59375 12.476562-12.476562 0-67.761719-24.582031-130.40625-69.378906-176.078126-44.175782-45.175781-103.699219-70.132812-167.71875-70.132812zm-211.886719 233.730469c2.746094-56.402344 24.582031-107.941407 61.894531-146.128907 39.433594-40.308593 92.71875-62.515624 149.871094-62.515624s110.4375 22.207031 149.867188 62.515624c37.4375 38.1875 59.152343 89.726563 61.898437 146.128907zm0 0"/></svg>
-                        9 personas
-                      </p>
-                      <p class="card-text">
-                        <svg id="Capa_1" enable-background="new 0 0 492.001 492.001" height="21" viewBox="0 0 492.001 492.001" width="22" xmlns="http://www.w3.org/2000/svg"><path d="m388.286 492.001c3.314 0 6-2.686 6-6v-385.715c0-55.386-44.899-100.286-100.286-100.286s-100.286 44.9-100.286 100.286v14.915h-75c-11.592.013-20.987 9.408-21 21v6c.013 11.592 9.408 20.987 21 21h162c11.592-.013 20.987-9.408 21-21v-6c-.013-11.592-9.408-20.987-21-21h-75v-14.915c0-48.759 39.527-88.286 88.286-88.286s88.286 39.527 88.286 88.286v385.715c0 3.314 2.687 6 6 6zm-98.572-355.8v6c-.006 4.968-4.032 8.995-9 9h-162c-4.968-.005-8.994-4.032-9-9v-6c.006-4.968 4.032-8.994 9-9h162c4.969.006 8.995 4.032 9 9z"/><path d="m205.714 183.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v12c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m241.714 183.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v36c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m277.714 183.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v12c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m133.714 183.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v12c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m169.714 183.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v36c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m205.714 219.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v72c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m241.714 243.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v24c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m277.714 219.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v72c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m133.714 219.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v72c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m169.714 243.848c0-3.314-2.686-6-6-6s-6 2.686-6 6v24c0 3.314 2.686 6 6 6s6-2.686 6-6z"/><path d="m199.714 321.848c-3.314 0-6 2.686-6 6v12c0 3.314 2.686 6 6 6s6-2.686 6-6v-12c0-3.314-2.686-6-6-6z"/><path d="m235.714 285.848c-3.314 0-6 2.686-6 6v48c0 3.314 2.686 6 6 6s6-2.686 6-6v-48c0-3.314-2.686-6-6-6z"/><path d="m271.714 321.848c-3.314 0-6 2.686-6 6v12c0 3.314 2.686 6 6 6s6-2.686 6-6v-12c0-3.314-2.686-6-6-6z"/><path d="m127.714 321.848c-3.314 0-6 2.686-6 6v12c0 3.314 2.686 6 6 6s6-2.686 6-6v-12c0-3.314-2.686-6-6-6z"/><path d="m163.714 285.848c-3.314 0-6 2.686-6 6v48c0 3.314 2.686 6 6 6s6-2.686 6-6v-48c0-3.314-2.686-6-6-6z"/></svg>
-                        2 baños
-                      </p>
-                    </div>
-                    <div class="col-md-6">
-                      <p class="card-text">
-                        <svg id="Layer_1" height="22" viewBox="0 0 512 512" width="22" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1">
-                          <path d="m471.242 204.163h-50.457v-110.869a26.029 26.029 0 0 0 -26-26h-277.57a26.029 26.029 0 0 0 -26 26v110.869h-50.457a30.792 30.792 0 0 0 -30.758 30.757v203.786a6 6 0 0 0 12 0v-82.66h468v82.66a6 6 0 0 0 12 0v-203.786a30.792 30.792 0 0 0 -30.758-30.757zm-368.027-110.869a14.016 14.016 0 0 1 14-14h277.57a14.016 14.016 0 0 1 14 14v110.869h-20.653v-31a30.793 30.793 0 0 0 -30.758-30.763h-60.274a30.793 30.793 0 0 0 -30.758 30.758v31h-20.686v-31a30.793 30.793 0 0 0 -30.756-30.758h-60.274a30.793 30.793 0 0 0 -30.758 30.758v31h-20.653zm175.129 110.869v-31a18.779 18.779 0 0 1 18.756-18.763h60.272a18.779 18.779 0 0 1 18.758 18.758v31zm-142.476 0v-31a18.779 18.779 0 0 1 18.758-18.763h60.274a18.779 18.779 0 0 1 18.758 18.758v31zm-95.11 12h430.484a18.779 18.779 0 0 1 18.758 18.757v71.135h-468v-71.135a18.779 18.779 0 0 1 18.758-18.757zm-18.758 127.883v-25.991h468v25.991z"/></svg>
-                        1 matrimonio</p>
-                      <p class="card-text">
-                        <svg id="Layer_1" height="21" viewBox="0 0 512 512" width="21" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m471.242 182.2h-15.642v-101.2a26.031 26.031 0 0 0 -26-26h-347.2a26.031 26.031 0 0 0 -26 26v101.2h-15.642c-16.958 0-30.758 15.463-30.758 34.469v234.331a6 6 0 0 0 12 0v-95.948h468v95.948a6 6 0 0 0 12 0v-234.331c0-19.006-13.8-34.469-30.758-34.469zm-402.842-101.2a14.016 14.016 0 0 1 14-14h347.2a14.016 14.016 0 0 1 14 14v101.2h-73.73v-36.549c0-19.006-16.233-34.468-36.187-34.468h-155.366c-19.954 0-36.187 15.462-36.187 34.468v36.549h-73.73zm85.73 101.2v-36.549c0-12.389 10.85-22.468 24.187-22.468h155.366c13.337 0 24.187 10.079 24.187 22.468v36.549zm-113.372 12h430.484c10.343 0 18.758 10.08 18.758 22.469v82.7h-468v-82.7c0-12.389 8.415-22.469 18.758-22.469zm-18.758 148.852v-31.686h468v31.686z"/></svg>
-                        5 individuales</p>
-                      <p class="card-text">
-                        <svg id="Layer_1" height="21" viewBox="0 0 512 512" width="21" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m471.242 182.2h-15.642v-101.2a26.031 26.031 0 0 0 -26-26h-347.2a26.031 26.031 0 0 0 -26 26v101.2h-15.642c-16.958 0-30.758 15.463-30.758 34.469v234.331a6 6 0 0 0 12 0v-95.948h468v95.948a6 6 0 0 0 12 0v-234.331c0-19.006-13.8-34.469-30.758-34.469zm-402.842-101.2a14.016 14.016 0 0 1 14-14h347.2a14.016 14.016 0 0 1 14 14v101.2h-73.73v-36.549c0-19.006-16.233-34.468-36.187-34.468h-155.366c-19.954 0-36.187 15.462-36.187 34.468v36.549h-73.73zm85.73 101.2v-36.549c0-12.389 10.85-22.468 24.187-22.468h155.366c13.337 0 24.187 10.079 24.187 22.468v36.549zm-113.372 12h430.484c10.343 0 18.758 10.08 18.758 22.469v82.7h-468v-82.7c0-12.389 8.415-22.469 18.758-22.469zm-18.758 148.852v-31.686h468v31.686z"/></svg>
-                        2 supletorias</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer">
-                  <a href="#" class="btn btn-link btn-primary float left">
-                    <svg height="16" viewBox="0 0 448 449" width="16" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m349.8125 211.40625h-250.917969c-5.523437 0-10 4.476562-10 10v156.863281c0 5.523438 4.476563 10 10 10h250.917969c5.519531 0 10-4.476562 10-10v-156.863281c0-5.523438-4.480469-10-10-10zm-10 78.433594h-65.542969v-58.441406h65.542969zm-151.082031 0v-58.441406h65.539062v58.433593zm65.539062 20v58.429687h-65.539062v-58.429687zm-85.539062-78.441406v58.433593h-59.835938v-58.433593zm-59.835938 78.433593h59.835938v58.433594h-59.835938zm165.375 58.433594v-58.425781h65.542969v58.429687zm0 0"/><path d="m398.203125 38.324219h-19.835937v-28.324219c0-5.523438-4.476563-10-10-10-5.523438 0-10 4.476562-10 10v28.324219h-262.328126v-28.324219c0-5.523438-4.476562-10-10-10-5.519531 0-10 4.476562-10 10v28.324219h-25.539062c-27.601562.03125-49.96875 22.398437-50 50v310.675781c.03125 27.601562 22.398438 49.96875 50 50h347.699219c27.601562-.03125 49.96875-22.398438 50-50v-310.675781c-.03125-27.601563-22.394531-49.96875-49.996094-50zm-347.699219 20h35c.179688.011719.359375.027343.542969.027343.179687 0 .359375-.019531.539063-.027343h281.238281c.179687.011719.359375.027343.539062.027343.183594 0 .363281-.019531.542969-.027343h29.300781c16.558594.019531 29.980469 13.4375 30 30v58.351562h-407.707031v-58.351562c.019531-16.5625 13.4375-29.980469 30-30zm347.699219 370.675781h-347.703125c-16.5625-.019531-29.980469-13.4375-30-30v-232.324219h407.699219v232.324219c-.015625 16.558594-13.4375 29.980469-29.996094 30zm0 0"/></svg>  
-                  </a>
-                  <a href="#" class="btn btn-link btn-primary float left">
-                    <svg height="16" viewBox="0 0 448 449" width="16" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m349.8125 211.40625h-250.917969c-5.523437 0-10 4.476562-10 10v156.863281c0 5.523438 4.476563 10 10 10h250.917969c5.519531 0 10-4.476562 10-10v-156.863281c0-5.523438-4.480469-10-10-10zm-10 78.433594h-65.542969v-58.441406h65.542969zm-151.082031 0v-58.441406h65.539062v58.433593zm65.539062 20v58.429687h-65.539062v-58.429687zm-85.539062-78.441406v58.433593h-59.835938v-58.433593zm-59.835938 78.433593h59.835938v58.433594h-59.835938zm165.375 58.433594v-58.425781h65.542969v58.429687zm0 0"/><path d="m398.203125 38.324219h-19.835937v-28.324219c0-5.523438-4.476563-10-10-10-5.523438 0-10 4.476562-10 10v28.324219h-262.328126v-28.324219c0-5.523438-4.476562-10-10-10-5.519531 0-10 4.476562-10 10v28.324219h-25.539062c-27.601562.03125-49.96875 22.398437-50 50v310.675781c.03125 27.601562 22.398438 49.96875 50 50h347.699219c27.601562-.03125 49.96875-22.398438 50-50v-310.675781c-.03125-27.601563-22.394531-49.96875-49.996094-50zm-347.699219 20h35c.179688.011719.359375.027343.542969.027343.179687 0 .359375-.019531.539063-.027343h281.238281c.179687.011719.359375.027343.539062.027343.183594 0 .363281-.019531.542969-.027343h29.300781c16.558594.019531 29.980469 13.4375 30 30v58.351562h-407.707031v-58.351562c.019531-16.5625 13.4375-29.980469 30-30zm347.699219 370.675781h-347.703125c-16.5625-.019531-29.980469-13.4375-30-30v-232.324219h407.699219v232.324219c-.015625 16.558594-13.4375 29.980469-29.996094 30zm0 0"/></svg>  
-                  </a>
-                  <button class="btn btn-info btn-link float-right" 
-                    placement="top" 
-                    ngbTooltip="125€ por noche" 
-                    style="cursor: help;">
-                    125€</button>
-                </div>
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 download-area ml-auto mr-auto">
+            <a href="https://www.creative-tim.com/product/paper-kit-2" class="btn btn-warning btn-round">Download free
+              HTML</a>
+            <a href="https://www.creative-tim.com/product/paper-kit-2-angular" class="btn btn-danger btn-round">Download
+              free Angular</a>
+          </div>
+        </div>
+        <div class="row justify-content-md-center sharing-area text-center">
+          <div class="text-center col-md-12 col-lg-8">
+            <h3>Thank you for supporting us!</h3>
+          </div>
+          <div class="text-center col-md-12 col-lg-8">
+            <a href="https://www.google.com/maps/place/Mol%C3%AD+d'en+Sala/@41.756627,2.024039,17z/data=!4m5!3m4!1s0x12a4e57615095ff3:0x277013cb3025109c!8m2!3d41.756623!4d2.026233"
+              class="btn btn-google-bg linkedin-sharrre btn-round" rel="tooltip" title="Share!">
+              <i class="fa fa-google-plus"></i> Google Maps
+            </a>
+            <a href="#pablo" class="btn btn-facebook-bg facebook-sharrre btn-round" rel="tooltip" title="Share!">
+              <i class="fa fa-facebook-square"></i> Facebook
+            </a>
           </div>
         </div>
       </div>
-
-      <!-- <div class="section" id="information">
-        <div class="container">
-          <div class="tim-title">
-            <h2>Information</h2>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              El Molí d'en Sala era una construcción donde los campesinos antiguamente llevaban el trigo a moler.
-              <br><br>
-              Renovada actualmente en 1a fase de construcción dispone de dos habitaciones dobles, una de matrimonio y la otra con dos camas individuales, además del sofá-cama del comedor (es decir 6 plazas).
-              <br><br>
-              Este alojamiento rural está ubicado a 1 km de Monistrol de Calders, municipio de 700 habitantes situado en un extremo del llano de Bages limitando con el Vallès Oriental y a 60 km de Barcelona.
-            </div>
-            <div class="col-md-6 mr-auto ml-auto">
-              <div class="card page-carousel">
-                <ngb-carousel>
-                    <ng-template ngbSlide>
-                        <img src="./assets/img/soroush-karimi.jpg" alt="Random first slide">
-                        <div class="carousel-caption">
-                            <p>Somewhere</p>
-                        </div>
-                    </ng-template>
-                    <ng-template ngbSlide>
-                        <img src="./assets/img/federico-beccari.jpg" alt="Random second slide">
-                        <div class="carousel-caption">
-                            <p>Somewhere else</p>
-                        </div>
-                    </ng-template>
-                    <ng-template ngbSlide>
-                        <img src="./assets/img/joshua-stannard.jpg" alt="Random third slide">
-                        <div class="carousel-caption">
-                            <p>Here it is</p>
-                        </div>
-                    </ng-template>
-                </ngb-carousel>
-            </div>
-            </div>
-
-          </div>
-        </div>
-      </div> -->
-      
-      <div class="section" id="services">
-        <div class="container">
-          <div class="tim-title">
-            <h2>Características y servicios</h2>
-          </div>
-          <div class="row">
-            <div class="col-sm-6 col-lg-3 col-xs-6">
-                <div class="tim-title">
-                    <h3>Exterior</h3>
-                </div>
-                <ul>
-                  <li>Barbacoa</li>
-                  <li>Zona de aparcamiento</li>
-                  <li>Terraza</li>
-                  <li>Piscina</li>
-                  <li>Jardín</li>
-                </ul>
-            </div>
-            <div class="col-sm-6 col-lg-3 col-xs-6">
-                <div class="tim-title">
-                    <h3>Interior</h3>
-                </div>
-                <ul>
-                  <li>Baño compartido</li>
-                  <li>Microondas</li>
-                  <li>Lavadora</li>
-                  <li>Comedor</li>
-                  <li>Cocina</li>
-                  <li>Chimenea</li>
-                  <li>Calefacción</li>
-                  <li>Televisión</li>
-                </ul>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <div class="tim-title">
-                    <h3>Servicios</h3>
-                </div>
-                <ul>
-                  <li>Admite animales</li>
-                  <li>Acceso internet</li>
-                </ul>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <div class="tim-title">
-                    <h3>Situación</h3>
-                </div>
-                <ul>
-                  <li>Afueras del casco urbano</li>
-                  <li>Montaña</li>
-                  <li>Aislada</li>
-                  <li>Cerca de un lago</li>
-                  <li>Acceso asfaltado</li>
-                  <li>Cerca de un río</li>
-                </ul>
-            </div>
-        </div>
-        </div>
-      </div>
-
-      <div class="section" id="location">
-        <div class="container">
-          <div class="tim-title">
-            <h2>Ubicación</h2>
-          </div>
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2976.3260759060936!2d2.024039!3d41.756627!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4e57615095ff3%3A0x277013cb3025109c!2sMol%C3%AD%20d&#39;en%20Sala!5e0!3m2!1sen!2ses!4v1597265090126!5m2!1sen!2ses"
-            width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
-          </iframe>
-          <!-- <app-map></app-map> -->
-        </div>
-      </div>
-      
-      <div class="section" id="gallery">
-        <div class="container">
-          <div class="tim-title">
-            <h2>Galería</h2>
-          </div>
-        </div>
-      </div>
-
-      <div class="section" id="reviews">
-        <div class="container">
-          <div class="tim-title">
-            <h2>Opiniones</h2>
-          </div>
-          <div class="elfsight-app-f378e153-0a99-4bb9-9374-e26a3e51cf9e"></div>
-        </div>
-      </div>
-
-      <div class="section" id="contact">
-        <div class="container">
-          <div class="tim-title">
-            <h2></h2>
-          </div>
-                <div class="row">
-                    <div class="col-md-8 mr-auto ml-auto">
-                      <h2 class="text-center">Reserva ya!</h2>
-                      <h5 class="text-center">Llama al 666 666 666</h5>
-                        <form class="contact-form">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Name</label>
-                                    <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="Name" (focus)="focus=true" (blur)="focus=false" >
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label>Email</label>
-                                    <div class="input-group" [ngClass]="{'input-group-focus':focus1===true}">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text">  <i class="nc-icon nc-email-85"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="Email" (focus)="focus1=true" (blur)="focus1=false" >
-                                    </div>
-                                </div>
-                            </div>
-                            <label>Message</label>
-                            <textarea class="form-control" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
-                            <div class="row">
-                                <div class="col-md-4 mr-auto ml-auto">
-                                    <button class="btn btn-danger btn-lg btn-fill">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-      </div>
-
-
-      <div class="section" id="carousel">
-          <div class="container">
-              <div class="tim-title">
-                  <h3>Carousel</h3>
-              </div>
-              <div class="row">
-                  <div class="col-md-8 mr-auto ml-auto">
-                      <div class="card page-carousel">
-                          <ngb-carousel>
-                              <ng-template ngbSlide>
-                                  <img src="./assets/img/soroush-karimi.jpg" alt="Random first slide">
-                                  <div class="carousel-caption">
-                                      <p>Somewhere</p>
-                                  </div>
-                              </ng-template>
-                              <ng-template ngbSlide>
-                                  <img src="./assets/img/federico-beccari.jpg" alt="Random second slide">
-                                  <div class="carousel-caption">
-                                      <p>Somewhere else</p>
-                                  </div>
-                              </ng-template>
-                              <ng-template ngbSlide>
-                                  <img src="./assets/img/joshua-stannard.jpg" alt="Random third slide">
-                                  <div class="carousel-caption">
-                                      <p>Here it is</p>
-                                  </div>
-                              </ng-template>
-                          </ngb-carousel>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <app-basicelements></app-basicelements>
-      <app-navigation></app-navigation>
-      <div class="section">
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-6">
-                      <div class="tim-title">
-                          <h3>Progress Bar</h3>
-                          <br/>
-                      </div>
-                      <ngb-progressbar type="success" [value]="25">25</ngb-progressbar><br>
-                      <ngb-progressbar type="info" [value]="50">Copying file <b>2 of 4</b>...</ngb-progressbar><br>
-                      <ngb-progressbar type="warning" [value]="75" [striped]="true" [animated]="true"><i>50%</i></ngb-progressbar><br>
-                      <ngb-progressbar type="danger" [value]="100" [striped]="true">Completed!</ngb-progressbar>
-
-                  </div>
-                  <div class="col-md-6">
-                      <div class="tim-title">
-                          <h3>Pagination</h3>
-                          <br/>
-                      </div>
-                      <ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
-                      <br/>
-                      <ngb-pagination [collectionSize]="100" [(page)]="page1" [maxSize]="5" [rotate]="true"></ngb-pagination>
-                  </div>
-              </div>
-              <br/>
-              <div class="row">
-                  <div class="col-md-6">
-                      <div class="tim-title">
-                          <h3>Navigation Tabs</h3>
-                      </div>
-
-                      <div class="nav-tabs-navigation">
-                          <div class="nav-tabs-wrapper">
-                              <ngb-tabset [justify]="'center'">
-                                  <ngb-tab title="Home">
-                                      <ng-template ngbTabContent>
-                                          <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient. With a smooth metal surface that seamlessly meets the new Retina HD display.</p>
-                                      </ng-template>
-                                  </ngb-tab>
-                                  <ngb-tab title="Profile">
-                                      <ng-template ngbTabContent>
-                                          <p>Here is your profile.</p>
-                                      </ng-template>
-                                  </ngb-tab>
-                                  <ngb-tab title="Messages">
-                                      <ng-template ngbTabContent>
-                                          <p>Here are your messages.</p>
-                                      </ng-template>
-                                  </ngb-tab>
-                              </ngb-tabset>
-                          </div>
-                      </div>
-
-                  </div>
-
-                  <div class="col-md-6">
-                      <div class="tim-title">
-                          <h3>Labels</h3>
-                      </div>
-                      <span class="label label-default">Default</span>
-                      <span class="label label-primary">Primary</span>
-                      <span class="label label-info">Info</span>
-                      <span class="label label-success">Success</span>
-                      <span class="label label-warning">Warning</span>
-                      <span class="label label-danger">Danger</span>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="section section-notifications" id="notifications">
-          <div class="container">
-              <div class="tim-title">
-                  <h3>Notification</h3>
-              </div>
-          </div>
-          <app-notification></app-notification>
-      </div>
-      <app-typography></app-typography>
-      <div class="section javascript-components">
-          <div class="container">
-              <div class="tim-title">
-                  <h2>Angular Native Components</h2>
-              </div>
-              <div class="row" id="modals">
-                  <div class="col-md-6">
-                      <div class="tim-title">
-                          <h3>Modal</h3>
-                      </div>
-                      <app-modal-component></app-modal-component>
-                  </div>
-                  <div class="col-md-6">
-                      <div class="tim-title">
-                          <h3>Popovers</h3>
-                      </div>
-
-                      <button type="button" class="btn btn-outline-danger btn-round" placement="right"
-                          ngbPopover="Here will be some very useful information about this popover." popoverTitle="Popover on right">
-                          on right
-                      </button>
-
-                      <button type="button" class="btn btn-outline-danger btn-round" placement="top"
-                          ngbPopover="Here will be some very useful information about this popover." popoverTitle="Popover on top">
-                          on top
-                      </button>
-
-                      <button type="button" class="btn btn-outline-danger btn-round" placement="left"
-                          ngbPopover="Here will be some very useful information about this popover." popoverTitle="Popover on left">
-                          on left
-                      </button>
-
-                      <button type="button" class="btn btn-outline-danger btn-round" placement="bottom"
-                          ngbPopover="Here will be some very useful information about this popover." popoverTitle="Popover on bottom">
-                          on bottom
-                      </button>
-
-                  </div>
-                  <br/>
-                  <div class="col-md-6">
-                      <div class="tim-title">
-                          <h3>Datepicker</h3>
-                      </div>
-                      <div class="row">
-                          <div class='col-sm-6'>
-                              <form class="form-inline">
-                                  <div class="form-group">
-                                      <div class="input-group date" [ngClass]="{'input-group-focus':focus===true}">
-                                          <input class="form-control" placeholder="yyyy-mm-dd"
-                                               name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" (focus)="focus=true" (blur)="focus=false" />
-                                          <div class="input-group-append">
-                                              <span class="glyphicon glyphicon-calendar input-group-text">
-                                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                              </span>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </form>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-md-6">
-                      <div class="tim-title">
-                          <h3>Tooltips</h3>
-                      </div>
-
-                      <button type="button" class="btn btn-outline-danger btn-round" placement="right" ngbTooltip="Tooltip on right">
-                         on right
-                     </button>
-                     <button type="button" class="btn btn-outline-danger btn-round" placement="left" ngbTooltip="Tooltip on left">
-                        on left
-                     </button>
-                      <button type="button" class="btn btn-outline-danger btn-round" placement="top" ngbTooltip="Tooltip on top">
-                         on top
-                      </button>
-                      <button type="button" class="btn btn-outline-danger btn-round" placement="bottom" ngbTooltip="Tooltip on bottom">
-                         on bottom
-                      </button>
-                  </div>
-              </div>
-          </div>
-      </div>
-      
-        <div class="section section-dark section-nucleo-icons">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                        <h2 class="title">Nucleo Icons</h2><br/>
-                        <p class="description">
-                            Now UI Kit comes with 100 custom icons made by our friends from NucleoApp. The official package contains over 2.100 thin icons which are looking great in combination with Now UI Kit Make sure you check all of them and use those that you like the most.
-                        </p><br/>
-                        <a [routerLink]="['/nucleoicons']" class="btn btn-danger btn-round">View Demo Icons</a>
-                        <a href="https://nucleoapp.com/?ref=1712" class="btn btn-outline-danger btn-round" target="_blank">View All Icons</a>
-                    </div>
-
-                    <div class="col-lg-6 col-md-12">
-                        <div class="icons-container">
-                            <i class="nc-icon nc-time-alarm"></i>
-                            <i class="nc-icon nc-atom"></i>
-                            <i class="nc-icon nc-camera-compact"></i>
-                            <i class="nc-icon nc-watch-time"></i>
-                            <i class="nc-icon nc-key-25"></i>
-                            <i class="nc-icon nc-diamond"></i>
-                            <i class="nc-icon nc-user-run"></i>
-                            <i class="nc-icon nc-layout-11"></i>
-                            <i class="nc-icon nc-badge"></i>
-                            <i class="nc-icon nc-bulb-63"></i>
-                            <i class="nc-icon nc-favourite-28"></i>
-                            <i class="nc-icon nc-planet"></i>
-                            <i class="nc-icon nc-tie-bow"></i>
-                            <i class="nc-icon nc-zoom-split"></i>
-                            <i class="nc-icon nc-cloud-download-93"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section section-dark">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 ml-auto mr-auto text-center">
-                        <h2 class="title">Completed with examples</h2>
-                        <p class="description">The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go. More importantly, looking at them will give you a picture of what you can built with this powerful kit.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section section-image section-login" style="background-image: url('assets/img/login-image.jpg');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
-                        <div class="card card-register">
-                            <h3 class="title">Welcome</h3>
-                            <div class="social-line text-center">
-                                <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
-                                    <i class="fa fa-facebook-square"></i>
-                                </a>
-                                <a href="#pablo" class="btn btn-neutral btn-google btn-just-icon">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                                <a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </div>
-                            <form class="register-form">
-                                <label>Email</label>
-                                <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
-                                  <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="nc-icon nc-email-85"></i>
-                                    </span>
-                                  </div>
-
-                                    <input type="text" class="form-control" placeholder="Email" (focus)="focus=true" (blur)="focus=false" >
-                                </div>
-
-                                <label>Password</label>
-                                <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
-                                  <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="nc-icon nc-key-25"></i>
-                                    </span>
-                                  </div>
-                                    <input type="text" class="form-control" placeholder="Password" (focus)="focus1=true" (blur)="focus1=false" >
-                                </div>
-                                <button class="btn btn-danger btn-block btn-round">Register</button>
-                            </form>
-                            <div class="forgot">
-                                <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
-                            </div>
-                        </div>
-                        <div class="col text-center" routerLinkActive="active">
-                            <a [routerLink]="['/signup']" class="btn btn-outline-neutral btn-round btn-lg">View Register Page</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section section-dark">
-            <div class="container">
-                <div class="row example-page">
-                    <div class="col-md-6 text-center" routerLinkActive="active">
-                        <a [routerLink]="['/landing']">
-                            <img src="./assets/img/examples/landing-page.JPG" alt="Rounded Image" class="img-rounded img-responsive" style="width: 100%">
-                            <a [routerLink]="['/landing']" class="btn btn-outline-neutral btn-round">Landing Page</a>
-                        </a>
-                    </div>
-
-                    <div class="col-md-6 text-center" routerLinkActive="active">
-                        <a [routerLink]="['/user-profile']">
-                            <img src="./assets/img/examples/profile-page.JPG" alt="Rounded Image" class="img-rounded img-responsive" style="width: 100%">
-                            <a [routerLink]="['/user-profile']" class="btn btn-outline-neutral btn-round">Profile Page</a>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-md-8 ml-auto mr-auto text-center">
-                        <h2 class="title">Do you like what you see?</h2>
-                        <p class="description">Cause if you do, it can be yours for Free. Hit the button below and download it. Start a new project or give an old Bootstrap 4 project a new look.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 download-area ml-auto mr-auto">
-                        <a href="https://www.creative-tim.com/product/paper-kit-2" class="btn btn-warning btn-round">Download free HTML</a>
-                        <a href="https://www.creative-tim.com/product/paper-kit-2-angular" class="btn btn-danger btn-round">Download free Angular</a>
-                    </div>
-                </div>
-                <div class="row justify-content-md-center sharing-area text-center">
-                    <div class="text-center col-md-12 col-lg-8">
-                        <h3>Thank you for supporting us!</h3>
-                    </div>
-                    <div class="text-center col-md-12 col-lg-8">
-                        <a href="https://www.google.com/maps/place/Mol%C3%AD+d'en+Sala/@41.756627,2.024039,17z/data=!4m5!3m4!1s0x12a4e57615095ff3:0x277013cb3025109c!8m2!3d41.756623!4d2.026233" class="btn btn-google-bg linkedin-sharrre btn-round" rel="tooltip" title="Share!">
-                            <i class="fa fa-google-plus"></i> Google Maps
-                        </a>
-                        <a href="#pablo" class="btn btn-facebook-bg facebook-sharrre btn-round" rel="tooltip" title="Share!">
-                            <i class="fa fa-facebook-square"></i> Facebook
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+  </div>
 </div>
