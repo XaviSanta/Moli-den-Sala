@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import baguetteBox from 'baguettebox.js';
 
 @Component({
   selector: 'app-accommodations',
@@ -13,7 +14,10 @@ export class AccommodationsComponent implements OnInit {
   img2;
   count: number = 0;
   isHovering: boolean = false;
+
   ngOnInit(): void {
+    baguetteBox.run('.gallery');
+
     this.img1 = $('#image1');
     this.img2 = $('#image2');
     

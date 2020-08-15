@@ -29,17 +29,17 @@
                     </a>
                 </li>
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a href="http://pk2-angular.creative-tim.com/documentation/tutorial" class="nav-link" target="_blank"><i class="nc-icon nc-image">
+                    <a [routerLink]="['/location']" class="nav-link"><i class="nc-icon nc-image">
                     </i> Gallery</a>
                 </li>
                 
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a href="/#/Loaction" class="nav-link" target="_blank"><i class="nc-icon nc-pin-3">
+                    <a [routerLink]="['/location']" class="nav-link"><i class="nc-icon nc-pin-3">
                     </i> Location</a>
                 </li>
 
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a href="/#/Contact" class="nav-link" target="_blank"><i class="nc-icon nc-email-85">
+                    <a [routerLink]="['/contact']" class="nav-link"><i class="nc-icon nc-email-85">
                     </i> Contact</a>
                 </li>
                 <li class="nav-item" *ngIf="isHome()">
