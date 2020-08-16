@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import baguetteBox from 'baguettebox.js';
+import VanillaTilt from 'vanilla-tilt';
 
 @Component({
   selector: 'app-accommodations',
   templateUrl: './accommodations.component.html',
-  styleUrls: ['./accommodations.component.css']
+  styleUrls: ['./accommodations.component.scss']
 })
 export class AccommodationsComponent implements OnInit {
   constructor() { }
@@ -16,6 +17,13 @@ export class AccommodationsComponent implements OnInit {
   isHovering: boolean = false;
 
   ngOnInit(): void {
+    const element = document.querySelectorAll('.card');
+    VanillaTilt.init(element as any, {
+      max: 10,
+      scale: 1.05,
+      speed: 4000,
+    });
+
     baguetteBox.run('.gallery');
 
     this.img1 = $('#image1');
