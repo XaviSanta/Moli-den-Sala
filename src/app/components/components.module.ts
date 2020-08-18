@@ -22,6 +22,12 @@ import { LocationComponent } from './location/location.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ContactComponent } from './contact/contact.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+
+
 
 @NgModule({
     imports: [
@@ -30,7 +36,10 @@ import { ContactComponent } from './contact/contact.component';
         NgbModule,
         NouisliderModule,
         RouterModule,
-        JwBootstrapSwitchNg2Module
+        JwBootstrapSwitchNg2Module,
+        MatNativeDateModule,
+        MatInputModule,
+        MatDatepickerModule,
     ],
     declarations: [
         ComponentsComponent,
@@ -48,7 +57,8 @@ import { ContactComponent } from './contact/contact.component';
         LocationComponent,
         GalleryComponent,
         ReviewsComponent,
-        ContactComponent
+        ContactComponent,
+        CalendarComponent
     ],
     entryComponents: [NgbdModalContent],
     exports:[ ComponentsComponent ]

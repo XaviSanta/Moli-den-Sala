@@ -19,7 +19,7 @@ export class AccommodationsComponent implements OnInit {
   ngOnInit(): void {
     const element = document.querySelectorAll('.card');
     VanillaTilt.init(element as any, {
-      max: 10,
+      max: 0,
       scale: 1.05,
       speed: 4000,
     });
