@@ -18,12 +18,29 @@
   <mat-datepicker-toggle [for]="myDatepicker" matSuffix></mat-datepicker-toggle>
   <mat-datepicker #myDatepicker></mat-datepicker>
 </mat-form-field> -->
-<mat-form-field>
-  <mat-label>Enter a date range</mat-label>
-  <mat-date-range-input (click)="picker.open()" [rangePicker]="picker">
-    <input matStartDate matInput placeholder="Start date" >
-    <input matEndDate matInput placeholder="End date">
+<mat-form-field appearance="fill" class="form-date-range">
+  <mat-date-range-picker touchUi #picker></mat-date-range-picker>
+  <mat-label>Entrada - Salida</mat-label>
+  <mat-date-range-input (click)="picker.open()" [rangePicker]="picker" [dateFilter]="filter" [min]="minDate" [max]="maxDate">
+    <input matStartDate matInput placeholder="" (dateChange)="changeStart($event)">
+    <input matEndDate matInput placeholder=""  (dateChange)="changeEnd($event)">
   </mat-date-range-input>
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-date-range-picker #picker></mat-date-range-picker>
 </mat-form-field>
+
+<div *ngIf="numNights">
+  <h5>{{numNights}} noches</h5>
+  <h5>La Petita: 
+    <span *ngIf="petitaIsAvailable" class="text-success">
+      <strong>{{pricePetita}}€</strong> 
+    </span> 
+    <span class="text-danger" *ngIf="!petitaIsAvailable">Ocupada para las fechas seleccionadas</span></h5>
+  
+  <h5>La Gran: 
+    <span *ngIf="granIsAvailable && !granIsShort" class="text-success">
+      <strong>{{priceGran}}€</strong> 
+    </span> 
+    <span class="text-danger" *ngIf="!granIsAvailable">Ocupada para las fechas seleccionadas</span>
+    <span class="text-danger" *ngIf="granIsShort">Para las fechas seleccionadas se requiere un mínimo de 2 noches</span>
+  </h5>
+</div>
