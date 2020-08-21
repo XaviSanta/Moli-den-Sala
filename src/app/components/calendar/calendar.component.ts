@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DateAdapter } from '@angular/material/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { CalendarService } from 'app/services/calendar/calendar.service';
+import { FirebaseDates } from '../interfaces/firebase-date';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-calendar',
@@ -33,22 +36,54 @@ export class CalendarComponent implements OnInit {
     return !dayIsOcInGran || !dayIsOcInPetita;
   }
 
-  constructor(private _adapter: DateAdapter<any>) { }
+  constructor(
+    private _adapter: DateAdapter<any>,
+    private calendarService: CalendarService,
+  ) { }
 
+  
   ngOnInit(): void {
     this._adapter.setLocale('es');
-    this.daysOccupiedGran = [
-      new Date(2020, 0, 22).getTime(),
-      new Date(2020, 7, 25).getTime(),
-      new Date(2020, 7, 24).getTime(),
-    ];
-
-    this.daysOccupiedPetita = [
-      new Date(2020, 0, 22).getTime(),
-      new Date(2020, 7, 25).getTime(),
-    ];
+    this.subscribeToPetita();
+    this.subscribeToGran();
   }
   
+  subscribeToPetita() {
+    this.calendarService.getDatesPetita()
+    .pipe(
+      map(action => {
+        const data = action.payload.data() as FirebaseDates;
+        return { ...data };
+      }),
+    )
+    .subscribe((data) => {
+      this.daysOccupiedPetita = data.DiesOcupats
+                                    .map(d => +`${d.seconds}000`)
+                                    // .map(d => d.seconds)
+                                    // .map(d => new Date(d))
+                                    // .map(d => new Date(d.getUTCFullYear(), d.getMonth(), d.getDate()))
+                                    // .map(d => d.getTime());
+    })
+  }
+  
+  subscribeToGran() {
+    this.calendarService.getDatesGran()
+    .pipe(
+      map(action => {
+        const data = action.payload.data() as FirebaseDates;
+        return { ...data };
+      }),
+    )
+    .subscribe((data) => {
+      console.log(data.DiesOcupats)
+      this.daysOccupiedGran = data.DiesOcupats
+                                    .map(d => +`${d.seconds}000`)
+                                    // .map(d => new Date(d))
+                                    // .map(d => new Date(d.getUTCFullYear(), d.getMonth(), d.getDate()))
+                                    // .map(d => d.getTime());
+    })
+  }
+
   changeStart(event: MatDatepickerInputEvent<Date>): void {
     if (!event.value) {
       return;
