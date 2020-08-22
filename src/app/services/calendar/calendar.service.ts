@@ -21,8 +21,12 @@ export class CalendarService {
     return this.firestore.collection('Dates').doc('Gran').snapshotChanges();
   }
 
-  createDate(date: Date){
-    return this.firestore.collection('Dates').add(date);
+  updateDiesOcupats(docName: string, dates: number[]) {
+    console.log('update')
+    const data = dates.map(d => new Date(d));
+    return this.firestore.collection('Dates').doc(docName).update({
+      DiesOcupats: data,  
+    });
   }
 
   deleteDate(dateId: string){
