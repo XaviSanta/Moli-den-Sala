@@ -151,17 +151,29 @@ export class CalendarComponent implements OnInit {
   }
 
   addDayOcc(docName: string) {
+    const newArray = this.addDaysToArray(docName);
+    if (!newArray || newArray.length === 0) {
+      return;
+    }
+
+    this.calendarService.updateDiesOcupats(docName, newArray);
+  }
+
+  removeDayOcc(docName: string) {
+    const newArray = this.removeDaysToArray(docName);
+    if (!newArray) {
+      return;
+    }
+
+    this.calendarService.updateDiesOcupats(docName, newArray);
+  }
+
+  addDaysToArray(docName: string): number[] {
     if (!this.startDate || !this.endDate){
       return;
     }
 
-    const days = [new Date(this.startDate)];
-    for (let i = 0; i < this.numNights; i++) {
-      const d = new Date(days[days.length-1]);
-      d.setDate(d.getDate() + 1);
-      days.push(d);
-    }
-    
+    const days = this.getRangeDays();
     let arr = [];
     if (docName === 'Gran') {
       arr = this.daysOccupiedGran.concat(days.map(d => d.getTime()));
@@ -172,7 +184,33 @@ export class CalendarComponent implements OnInit {
     }
 
     var mySet = new Set(arr)
-    var filteredArray = Array.from(mySet);
-    this.calendarService.updateDiesOcupats(docName, filteredArray);
+    return Array.from(mySet);
+  }
+
+  removeDaysToArray(docName: string): number[] {
+    if (!this.startDate || !this.endDate){
+      return;
+    }
+
+    const days = this.getRangeDays();
+    let days2 = days.map(d => d.getTime());
+    switch (docName) {
+      case 'Gran':
+        return this.daysOccupiedGran.filter(x => !days2.includes(x));
+      case 'Petita':
+        return this.daysOccupiedPetita.filter(x => !days2.includes(x));
+      default:
+        return;
+    }
+  }
+
+  getRangeDays(): Date[] {
+    const days = [new Date(this.startDate)];
+    for (let i = 0; i < this.numNights; i++) {
+      const d = new Date(days[days.length-1]);
+      d.setDate(d.getDate() + 1);
+      days.push(d);
+    }
+    return days;
   }
 }
