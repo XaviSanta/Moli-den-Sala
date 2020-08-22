@@ -75,7 +75,6 @@ export class CalendarComponent implements OnInit {
       }),
     )
     .subscribe((data) => {
-      console.log(data.DiesOcupats)
       this.daysOccupiedGran = data.DiesOcupats
                                     .map(d => +`${d.seconds}000`)
                                     // .map(d => new Date(d))
@@ -137,8 +136,8 @@ export class CalendarComponent implements OnInit {
 
   getNextOccupiedDate(d: Date): number {
     const date = new Date(d).getTime();
-    const occupiedDatesBoth = [...this.daysOccupiedGran, ...this.daysOccupiedPetita]
-    return occupiedDatesBoth
+    const commonDates = this.daysOccupiedGran.filter(x => this.daysOccupiedPetita.includes(x));
+    return commonDates
       .filter(dt => dt > date)
       .sort()[0]
   }
@@ -149,5 +148,31 @@ export class CalendarComponent implements OnInit {
     const overlapedDays = listOccupiedDates.filter(d => start <= d && d <= end);
 
     return overlapedDays.length > 0;
+  }
+
+  addDayOcc(docName: string) {
+    if (!this.startDate || !this.endDate){
+      return;
+    }
+
+    const days = [new Date(this.startDate)];
+    for (let i = 0; i < this.numNights; i++) {
+      const d = new Date(days[days.length-1]);
+      d.setDate(d.getDate() + 1);
+      days.push(d);
+    }
+    
+    let arr = [];
+    if (docName === 'Gran') {
+      arr = this.daysOccupiedGran.concat(days.map(d => d.getTime()));
+    } else if (docName === 'Petita') {
+      arr = this.daysOccupiedPetita.concat(days.map(d => d.getTime()));
+    } else {
+      return;
+    }
+
+    var mySet = new Set(arr)
+    var filteredArray = Array.from(mySet);
+    this.calendarService.updateDiesOcupats(docName, filteredArray);
   }
 }
