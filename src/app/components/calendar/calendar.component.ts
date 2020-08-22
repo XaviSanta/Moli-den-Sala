@@ -4,6 +4,7 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { CalendarService } from 'app/services/calendar/calendar.service';
 import { FirebaseDates } from '../interfaces/firebase-date';
 import { map } from 'rxjs/operators';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-calendar',
@@ -37,6 +38,7 @@ export class CalendarComponent implements OnInit {
   }
 
   constructor(
+    public location: Location,
     private _adapter: DateAdapter<any>,
     private calendarService: CalendarService,
   ) { }
@@ -212,5 +214,18 @@ export class CalendarComponent implements OnInit {
       days.push(d);
     }
     return days;
+  }
+
+  isAdmin() {
+    var titlee = this.location.prepareExternalUrl(this.location.path());
+    if(titlee.charAt(0) === '#'){
+        titlee = titlee.slice( 1 );
+    }
+      if( titlee === '/admin' ) {
+          return true;
+      }
+      else {
+          return false;
+      }
   }
 }
