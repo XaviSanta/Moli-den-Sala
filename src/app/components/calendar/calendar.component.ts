@@ -52,37 +52,28 @@ export class CalendarComponent implements OnInit {
   
   subscribeToPetita() {
     this.calendarService.getDatesPetita()
-    .pipe(
-      map(action => {
-        const data = action.payload.data() as FirebaseDates;
-        return { ...data };
-      }),
-    )
-    .subscribe((data) => {
-      this.daysOccupiedPetita = data.DiesOcupats
-                                    .map(d => +`${d.seconds}000`)
-                                    // .map(d => d.seconds)
-                                    // .map(d => new Date(d))
-                                    // .map(d => new Date(d.getUTCFullYear(), d.getMonth(), d.getDate()))
-                                    // .map(d => d.getTime());
-    })
+      .pipe(
+        map(action => {
+          const data = action.payload.data() as FirebaseDates;
+          return { ...data };
+        }),
+      )
+      .subscribe((data) => {
+        this.daysOccupiedPetita = data.DiesOcupats.map(d => +`${d.seconds}000`)
+      })
   }
   
   subscribeToGran() {
     this.calendarService.getDatesGran()
-    .pipe(
-      map(action => {
-        const data = action.payload.data() as FirebaseDates;
-        return { ...data };
-      }),
-    )
-    .subscribe((data) => {
-      this.daysOccupiedGran = data.DiesOcupats
-                                    .map(d => +`${d.seconds}000`)
-                                    // .map(d => new Date(d))
-                                    // .map(d => new Date(d.getUTCFullYear(), d.getMonth(), d.getDate()))
-                                    // .map(d => d.getTime());
-    })
+      .pipe(
+        map(action => {
+          const data = action.payload.data() as FirebaseDates;
+          return { ...data };
+        }),
+      )
+      .subscribe((data) => {
+        this.daysOccupiedGran = data.DiesOcupats.map(d => +`${d.seconds}000`)
+      })
   }
 
   changeStart(event: MatDatepickerInputEvent<Date>): void {

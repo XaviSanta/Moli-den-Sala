@@ -1,0 +1,14 @@
+
+mat-calendar::ng-deep.mat-calendar-body-disabled>.mat-calendar-body-cell-content {
+  text-decoration: none !important;
+  background-color: rgb(252, 173, 173) !important;
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+mat-calendar::ng-deep.mat-calendar-body-cell-content {
+  cursor: default;
+}
+
+mat-calendar::ng-deep.mat-calendar-table-header {
+  color: rgb(0 0 0 / 65%) !important;
+}

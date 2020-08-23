@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h5 class="modal-title text-center">{{name}}</h5>
+  <h6 class="modal-title text-center">Disponibilidad en <strong>{{house}}</strong></h6>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -7,17 +7,19 @@
 
 
 <div class="modal-body" style="width:100%">
-  <app-calendar></app-calendar>
+  <p *ngIf="isLoading">Cargando...</p>
+  <app-availability *ngIf="!isLoading" [daysOccupied]="daysOccupied"></app-availability>
 </div>
 
 
 <div class="modal-footer">
-  <div class="left-side">
-    <button type="button" class="btn btn-default btn-link" (click)="activeModal.close('Close click')">Never
-      mind</button>
-  </div>
-  <div class="divider"></div>
+    <button type="button" class="btn btn-danger btn-link" (click)="activeModal.close('Close click')">
+      Cerrar
+    </button>
+  <!-- <div class="divider"></div>
   <div class="right-side">
-    <button type="button" class="btn btn-danger btn-link" (click)="activeModal.close('Close click')">Close</button>
-  </div>
+    <button type="button" class="btn btn-danger btn-link" (click)="activeModal.close('Close click')">
+      Cerrar
+    </button>
+  </div> -->
 </div>

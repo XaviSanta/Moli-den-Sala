@@ -26,11 +26,11 @@
 </div>
 
 
-<div *ngIf="isAdmin()">
+<div *ngIf="isAdmin()" class="section">
   <mat-form-field appearance="fill" class="form-date-range">
     <mat-date-range-picker #picker2></mat-date-range-picker>
     <mat-label>Entrada - Salida</mat-label>
-    <mat-date-range-input (click)="picker2.open()" [rangePicker]="picker2" [min]="minDate">
+    <mat-date-range-input (click)="picker2.open()" [rangePicker]="picker2">
       <input matStartDate matInput placeholder="" (dateChange)="changeStart($event)">
       <input matEndDate matInput placeholder=""  (dateChange)="changeEnd($event)">
     </mat-date-range-input>
