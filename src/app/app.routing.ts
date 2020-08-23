@@ -12,15 +12,16 @@ import { LocationComponent } from './components/location/location.component';
 import { AccommodationsComponent } from './components/accommodations/accommodations.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 const routes: Routes =[
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home',             component: ComponentsComponent },
+    { path: '', component: ComponentsComponent},
     { path: 'user-profile',     component: ProfileComponent },
     { path: 'accommodations',   component: AccommodationsComponent },
     { path: 'location',         component: LocationComponent },
     { path: 'gallery',          component: GalleryComponent },
     { path: 'contact',          component: ContactComponent },
+    { path: 'admin',            component: CalendarComponent },
     { path: 'signup',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
     { path: 'nucleoicons',      component: NucleoiconsComponent }

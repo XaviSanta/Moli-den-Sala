@@ -9,8 +9,10 @@ import VanillaTilt from 'vanilla-tilt';
   styleUrls: ['./accommodations.component.scss']
 })
 export class AccommodationsComponent implements OnInit {
+  nameHouse1: string = `La petita del Molí`;
+  nameHouse2: string = `El Molí Vell d'en Sala`;
   constructor() { }
-  that: this;
+  
   img1;
   img2;
   count: number = 0;
@@ -19,7 +21,7 @@ export class AccommodationsComponent implements OnInit {
   ngOnInit(): void {
     const element = document.querySelectorAll('.card');
     VanillaTilt.init(element as any, {
-      max: 10,
+      max: 5,
       scale: 1.05,
       speed: 4000,
     });

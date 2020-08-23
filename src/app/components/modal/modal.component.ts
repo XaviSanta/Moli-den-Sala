@@ -1,44 +1,77 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { CalendarService } from 'app/services/calendar/calendar.service';
+import { map } from 'rxjs/operators';
+import { FirebaseDates } from '../interfaces/firebase-date';
+import * as $ from 'jquery';
 
 @Component({
     selector: 'app-modal-content',
-    template: `
-    <div class="modal-header">
-        <h5 class="modal-title text-center">{{name}}</h5>
-        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body" style="width:100%">
-      
-    </div>
-    <div class="modal-footer">
-        <div class="left-side">
-            <button type="button" class="btn btn-default btn-link" (click)="activeModal.close('Close click')">Never mind</button>
-        </div>
-        <div class="divider"></div>
-        <div class="right-side">
-            <button type="button" class="btn btn-danger btn-link" (click)="activeModal.close('Close click')">Close</button>
-        </div>
-    </div>
-    `
+    templateUrl: './modal.content.html',
+    styleUrls: ['./modal.component.scss']
 })
-export class NgbdModalContent {
-    @Input() name;
+export class NgbdModalContent implements OnInit {
+  @Input() house: string;
+  daysOccupied: number[];
+  isLoading: boolean;
+  constructor(
+    public activeModal: NgbActiveModal,
+    private calendarService: CalendarService,
+  ) {}
 
-    constructor(public activeModal: NgbActiveModal) {}
+  ngOnInit() {
+    // const nextMonthBtn = $('.mat-calendar-next-button');
+    console.log(document.getElementsByName("button"));
+    this.isLoading = true;
+    if (this.house === 'La petita del Molí') {
+      this.subscribeToPetita();
+    } else {
+      this.subscribeToGran();
+    }
+  }
+
+  subscribeToPetita() {
+    this.calendarService.getDatesPetita()
+      .pipe(
+        map(action => {
+          const data = action.payload.data() as FirebaseDates;
+          return { ...data };
+        }),
+      )
+      .subscribe((data) => {
+        this.daysOccupied = data.DiesOcupats.map(d => +`${d.seconds}000`);
+        this.isLoading = false;
+      })
+  }
+  
+  subscribeToGran() {
+    this.calendarService.getDatesGran()
+      .pipe(
+        map(action => {
+          const data = action.payload.data() as FirebaseDates;
+          return { ...data };
+        }),
+      )
+      .subscribe((data) => {
+        this.daysOccupied = data.DiesOcupats.map(d => +`${d.seconds}000`);
+        this.isLoading = false;
+      })
+  }
 }
 
 @Component({
-    selector: 'app-modal-component',
-    templateUrl: './modal.component.html'
+  selector: 'app-modal-component',
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.scss']
 })
 export class NgbdModalComponent {
-  @Input() name: string;
-    constructor(private modalService: NgbModal) {}
-    open() {
-        const modalRef = this.modalService.open(NgbdModalContent);
-        modalRef.componentInstance.name = this.name || 'Imágenes';
-    }
+  @Input() house: string;
+  constructor(
+    private modalService: NgbModal,
+  ) {}
+
+  open() {
+    const modalRef = this.modalService.open(NgbdModalContent);
+    modalRef.componentInstance.house = this.house;
+  }
 }

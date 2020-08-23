@@ -1,0 +1,57 @@
+<mat-form-field appearance="fill" class="form-date-range">
+  <mat-date-range-picker touchUi #picker></mat-date-range-picker>
+  <mat-label>Entrada - Salida</mat-label>
+  <mat-date-range-input (click)="picker.open()" [rangePicker]="picker" [dateFilter]="filter" [min]="minDate" [max]="maxDate">
+    <input matStartDate matInput placeholder="" (dateChange)="changeStart($event)">
+    <input matEndDate matInput placeholder=""  (dateChange)="changeEnd($event)">
+  </mat-date-range-input>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+</mat-form-field>
+
+<div *ngIf="numNights">
+  <h5>{{numNights}} noches</h5>
+  <h5>La Petita: 
+    <span *ngIf="petitaIsAvailable" class="text-success">
+      <strong>{{pricePetita}}€</strong> 
+    </span> 
+    <span class="text-danger" *ngIf="!petitaIsAvailable">Ocupada para las fechas seleccionadas</span></h5>
+  
+  <h5>La Gran: 
+    <span *ngIf="granIsAvailable && !granIsShort" class="text-success">
+      <strong>{{priceGran}}€</strong> 
+    </span> 
+    <span class="text-danger" *ngIf="!granIsAvailable">Ocupada para las fechas seleccionadas</span>
+    <span class="text-danger" *ngIf="granIsShort">Para las fechas seleccionadas se requiere un mínimo de 2 noches</span>
+  </h5>
+</div>
+
+
+<div *ngIf="isAdmin()" class="section">
+  <mat-form-field appearance="fill" class="form-date-range">
+    <mat-date-range-picker #picker2></mat-date-range-picker>
+    <mat-label>Entrada - Salida</mat-label>
+    <mat-date-range-input (click)="picker2.open()" [rangePicker]="picker2">
+      <input matStartDate matInput placeholder="" (dateChange)="changeStart($event)">
+      <input matEndDate matInput placeholder=""  (dateChange)="changeEnd($event)">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+  </mat-form-field>
+  
+  <div class="row">
+    <button (click)="addDayOcc('Gran')" class="btn btn-info btn-round">
+      Afegir dies gran
+    </button>
+    <button (click)="addDayOcc('Petita')" class="btn btn-info btn-round">
+      Afegir dies petita
+    </button>
+  </div>
+  <div class="row">
+    <button (click)="removeDayOcc('Gran')" class="btn btn-danger btn-round">
+      Alliberar dies gran
+    </button>
+    <button (click)="removeDayOcc('Petita')" class="btn btn-danger btn-round">
+      Alliberar dies petita
+    </button>
+  </div>
+</div>
+
