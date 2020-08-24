@@ -16,15 +16,11 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 
 const routes: Routes =[
     { path: '', component: ComponentsComponent},
-    { path: 'user-profile',     component: ProfileComponent },
     { path: 'accommodations',   component: AccommodationsComponent },
     { path: 'location',         component: LocationComponent },
     { path: 'gallery',          component: GalleryComponent },
     { path: 'contact',          component: ContactComponent },
     { path: 'admin',            component: CalendarComponent },
-    { path: 'signup',           component: SignupComponent },
-    { path: 'landing',          component: LandingComponent },
-    { path: 'nucleoicons',      component: NucleoiconsComponent }
 ];
 
 @NgModule({
@@ -32,7 +28,7 @@ const routes: Routes =[
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes,{
-      useHash: true
+      useHash: false
     })
   ],
   exports: [
