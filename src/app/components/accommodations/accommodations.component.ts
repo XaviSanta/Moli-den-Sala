@@ -23,7 +23,7 @@ export class AccommodationsComponent implements OnInit {
     VanillaTilt.init(element as any, {
       max: 5,
       scale: 1.05,
-      speed: 4000,
+      speed: 2000,
     });
 
     baguetteBox.run('.gallery');

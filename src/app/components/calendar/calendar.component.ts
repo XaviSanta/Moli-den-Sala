@@ -105,7 +105,7 @@ export class CalendarComponent implements OnInit {
 
     this.petitaIsAvailable = !this.rangeDayOverlaps(this.endDate, this.startDate, this.daysOccupiedPetita);
 
-    const numNights = this.numNights = (this.endDate - this.startDate)/86400000;
+    const numNights = this.numNights = Math.floor((this.endDate - this.startDate)/86400000);
     const price =  numNights > 5 
       ? numNights * 66.666666667
       : numNights * 95 ;
@@ -119,7 +119,7 @@ export class CalendarComponent implements OnInit {
 
     this.granIsAvailable = !this.rangeDayOverlaps(this.endDate, this.startDate, this.daysOccupiedGran);
 
-    const numNights = this.numNights = (this.endDate - this.startDate)/86400000;
+    const numNights = this.numNights = Math.floor((this.endDate - this.startDate)/86400000);
     this.granIsShort = numNights < 2;
     const price =  numNights > 5 
       ? numNights * 100

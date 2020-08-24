@@ -26,7 +26,7 @@
 </div>
 
 
-<div *ngIf="isAdmin()" class="section">
+<div *ngIf="isAdmin()" class="section text-center">
   <mat-form-field appearance="fill" class="form-date-range">
     <mat-date-range-picker #picker2></mat-date-range-picker>
     <mat-label>Entrada - Salida</mat-label>
@@ -36,22 +36,20 @@
     </mat-date-range-input>
     <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
   </mat-form-field>
-  
-  <div class="row">
+  <br>
     <button (click)="addDayOcc('Gran')" class="btn btn-info btn-round">
       Afegir dies gran
     </button>
     <button (click)="addDayOcc('Petita')" class="btn btn-info btn-round">
       Afegir dies petita
     </button>
-  </div>
-  <div class="row">
+  <br>
+  <br>
     <button (click)="removeDayOcc('Gran')" class="btn btn-danger btn-round">
       Alliberar dies gran
     </button>
     <button (click)="removeDayOcc('Petita')" class="btn btn-danger btn-round">
       Alliberar dies petita
     </button>
-  </div>
 </div>
 
