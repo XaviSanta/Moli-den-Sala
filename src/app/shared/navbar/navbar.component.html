@@ -22,25 +22,36 @@
                         <p class="d-lg-none">Instagram</p>
                     </a>
                 </li>
+
                 <li class="nav-item" >
-                    <a [routerLink]="['/gallery']" class="nav-link"><i class="nc-icon nc-image">
-                    </i> Gallery</a>
-                </li>
-                
-                <li class="nav-item" >
-                    <a [routerLink]="['/location']" class="nav-link"><i class="nc-icon nc-pin-3">
-                    </i> Location</a>
+                    <!-- <a [routerLink]="['/location']" class="nav-link"><i class="nc-icon nc-pin-3"> -->
+                    <a (click)="scrollTo('accommodations')" style="cursor: pointer; margin-top: 16px;" class="nav-link">
+                        Alojamientos</a>
                 </li>
 
                 <li class="nav-item" >
-                    <a [routerLink]="['/contact']" class="nav-link"><i class="nc-icon nc-email-85">
-                    </i> Contact</a>
+                    <!-- <a [routerLink]="['/location']" class="nav-link"><i class="nc-icon nc-pin-3"> -->
+                    <a (click)="scrollTo('location')" style="cursor: pointer; margin-top: 16px;" class="nav-link">
+                        Ubicación</a>
                 </li>
-                <li class="nav-item" *ngIf="isHome()">
-                    <a href="https://www.escapadarural.com/casa-rural/barcelona/moli-d-en-sala/precios" target="_blank" class="btn btn-danger btn-round">
-                        Rent
+
+
+                <li class="nav-item" >
+                    <!-- <a [routerLink]="['/gallery']" class="nav-link"><i class="nc-icon nc-image"> -->
+                    <a (click)="scrollTo('gallery')" style="cursor: pointer; margin-top: 16px;" class="nav-link">
+                        Galería</a>
+                </li>
+
+                <li class="nav-item" >
+                    <!-- <a [routerLink]="['/contact']" class="nav-link"><i class="nc-icon nc-email-85"> -->
+                    <a (click)="scrollTo('contact')" style="cursor: pointer;color: white;" class="btn btn-danger btn-round">
+                        Contacto</a>
+                </li>
+                <!-- <li class="nav-item" *ngIf="isHome()">
+                    <a (click)="scrollTo('accommodations')" style="cursor: pointer;" class="btn btn-danger btn-round">
+                        Precios
                     </a>
-                </li>
+                </li> -->
                 <!-- <li class="nav-item" >
                     <a [routerLink]="['/']" class="nav-link"><i class="nc-icon nc-layout-11"></i>Components</a>
                     <a [routerLink]="['/']" class="nav-link">Back to Kit</a>

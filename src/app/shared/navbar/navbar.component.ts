@@ -72,4 +72,8 @@ export class NavbarComponent implements OnInit {
             return false;
         }
     }
+
+    scrollTo(id: string) {
+        document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+    }
 }
