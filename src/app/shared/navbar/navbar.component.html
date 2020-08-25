@@ -43,6 +43,12 @@
                 </li>
 
                 <li class="nav-item" >
+                    <!-- <a [routerLink]="['/gallery']" class="nav-link"><i class="nc-icon nc-image"> -->
+                    <a (click)="scrollTo('reviews')" style="cursor: pointer; margin-top: 16px;" class="nav-link">
+                        Opiniones</a>
+                </li>
+
+                <li class="nav-item" >
                     <!-- <a [routerLink]="['/contact']" class="nav-link"><i class="nc-icon nc-email-85"> -->
                     <a (click)="scrollTo('contact')" style="cursor: pointer;color: white;" class="btn btn-danger btn-round">
                         Contacto</a>
