@@ -22,7 +22,7 @@ export class AccommodationsComponent implements OnInit {
     const element = document.querySelectorAll('.card');
     VanillaTilt.init(element as any, {
       max: 5,
-      scale: 1.05,
+      scale: 1.01,
       speed: 2000,
     });
 
