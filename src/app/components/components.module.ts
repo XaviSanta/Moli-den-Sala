@@ -27,6 +27,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { AvailabilityComponent } from './availability/availability.component';
+import { FaqsComponent } from './faqs/faqs.component';
 
 @NgModule({
     imports: [
@@ -58,7 +59,8 @@ import { AvailabilityComponent } from './availability/availability.component';
         ReviewsComponent,
         ContactComponent,
         CalendarComponent,
-        AvailabilityComponent
+        AvailabilityComponent,
+        FaqsComponent
     ],
     entryComponents: [NgbdModalContent],
     exports:[ ComponentsComponent ]
