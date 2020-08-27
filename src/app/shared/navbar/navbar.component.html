@@ -10,28 +10,7 @@
         </div>
         <div class="navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item" >
-                    <a class="nav-link" rel="tooltip" title="Whatsapp" data-placement="bottom"  target="popup"
-                        href="https://api.whatsapp.com/send?phone=34639811282"
-                        onclick="window.open('https://api.whatsapp.com/send?phone=34656642994','popup','width=1000,height=600'); return false;">
-                        <i class="fa fa-whatsapp"></i>
-                        <p class="d-lg-none">Whatsap</p>
-                    </a>
-                </li>
-                <li class="nav-item" >
-                    <a class="nav-link" rel="tooltip" title="Síguenos en Facebook" data-placement="bottom" href="https://www.facebook.com/molidensala" target="_blank">
-                        <i class="fa fa-facebook-square"></i>
-                        <p class="d-lg-none">Facebook</p>
-                    </a>
-                </li>
-                <li class="nav-item" >
-                    <a class="nav-link" rel="tooltip" title="Síguenos en Instagram" data-placement="bottom" href="https://www.instagram.com/molidensala/" target="_blank">
-                        <i class="fa fa-instagram"></i>
-                        <p class="d-lg-none">Instagram</p>
-                    </a>
-                </li>
-
-                <li class="nav-item" >
+                <li class="nav-item">
                     <!-- <a [routerLink]="['/location']" class="nav-link"><i class="nc-icon nc-pin-3"> -->
                     <a (click)="scrollTo('accommodations')" style="cursor: pointer; margin-top: 16px;" class="nav-link">
                         Alojamientos</a>
@@ -58,7 +37,8 @@
 
                 <li class="nav-item" >
                     <!-- <a [routerLink]="['/contact']" class="nav-link"><i class="nc-icon nc-email-85"> -->
-                    <a (click)="scrollTo('contact')" style="cursor: pointer;color: white;" class="btn btn-danger btn-round">
+                    <a (click)="scrollTo('contact')" style="cursor: pointer; margin-top: 16px;" class="nav-link">
+                        <!-- <a (click)="scrollTo('contact')" style="cursor: pointer;color: white;" class="btn btn-primary btn-round"> -->
                         Contacto</a>
                 </li>
                 <!-- <li class="nav-item" *ngIf="isHome()">
@@ -73,6 +53,26 @@
                 <li class="nav-item" *ngIf="isDocumentation()">
                     <a href="https://github.com/creativetimofficial/paper-kit-2-angular/issues?ref=pk2-free-local" target="_blank" class="nav-link">Have an issue</a>
                 </li> -->
+                <li class="nav-item" >
+                    <a class="nav-link" rel="tooltip" title="Whatsapp" data-placement="bottom"  target="popup"
+                        href="https://api.whatsapp.com/send?phone=34639811282"
+                        onclick="window.open('https://api.whatsapp.com/send?phone=34656642994','popup','width=1000,height=600'); return false;">
+                        <i class="fa fa-whatsapp"></i>
+                        <p class="d-lg-none">Whatsap</p>
+                    </a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" rel="tooltip" title="Síguenos en Facebook" data-placement="bottom" href="https://www.facebook.com/molidensala" target="_blank">
+                        <i class="fa fa-facebook-square"></i>
+                        <p class="d-lg-none">Facebook</p>
+                    </a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" rel="tooltip" title="Síguenos en Instagram" data-placement="bottom" href="https://www.instagram.com/molidensala/" target="_blank">
+                        <i class="fa fa-instagram"></i>
+                        <p class="d-lg-none">Instagram</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
