@@ -47,12 +47,26 @@
   }
 }
 .presentation-title {
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+
   text-align: center;
-  top: -5%;
+  top: -10%;
   position: relative;
   margin-bottom: -100px;
   font-family: 'Lexend Deca', cursive;
   font-size: 3rem;
+  
+  padding: 20px;
+  padding-bottom: 6px!important;
+  border-radius: 7px;
+}
+.nav-blur{
+  backdrop-filter: blur(5px);
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 10vh;
 }
 .presentation-subtitle {
   font-family: 'Abel', cursive;
@@ -65,40 +79,34 @@
 
 .scroll-y {
   position: absolute;
-  bottom: 3rem;
+  bottom: 5rem;
   fill: white;
   cursor: pointer;
+  animation: translate 3s infinite;
+}
+@keyframes translate {
+  0% {
+    transform: translateY(0);    
+  }
+  50% {
+    transform: translateY(-10px)
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes blur {
+  0% {
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+  }
+  50% {
+    -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px); 
+  }
+  100% {
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);   
+  }
 }
 /* --------------- */
-
-.site-title {
-  /* background: url('assets/img/moli/exterior1.jpg'); */
-  background: url('assets/img/landing3.jpg');
-  background-size: cover;
-  height: 110vh;
-  display: flex;
-  justify-content: center;
-}
-.site-title h1, h3{
-  margin: .3rem;
-}
-.site-title h3 {
-  font-family: 'Abel', sans-serif;
-  font-size: 1.3rem;
-}
-.site-title h1 {
-  font-family: 'Lexend Deca', cursive;
-  font-size: 3rem;
-}
-
-.site-title .btn{
-  margin: 1.8rem;
-}
-.site-title .btn:hover{
-  background: transparent;
-}
-.site-background {
-  padding-top: 13rem;
-  text-align: center;
-  color: white;
-}

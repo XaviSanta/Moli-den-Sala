@@ -209,14 +209,14 @@ export class CalendarComponent implements OnInit {
 
   isAdmin() {
     var titlee = this.location.prepareExternalUrl(this.location.path());
-    if(titlee.charAt(0) === '#'){
+    if(titlee.charAt(0) === '/'){
         titlee = titlee.slice( 1 );
     }
-      if( titlee === '/admin' ) {
-          return true;
-      }
-      else {
-          return false;
-      }
+    if( titlee === 'Moli-den-Sala/admin' ) {
+        return true;
+    }
+    else {
+        return false;
+    }
   }
 }

@@ -1,4 +1,4 @@
-<mat-form-field appearance="fill" class="form-date-range">
+<mat-form-field *ngIf="!isAdmin()" appearance="fill" class="form-date-range">
   <mat-date-range-picker touchUi #picker></mat-date-range-picker>
   <mat-label>Entrada - Salida</mat-label>
   <mat-date-range-input (click)="picker.open()" [rangePicker]="picker" [dateFilter]="filter" [min]="minDate" [max]="maxDate">

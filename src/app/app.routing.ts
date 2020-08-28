@@ -19,7 +19,6 @@ const routes: Routes =[
     // { path: 'accommodations',   component: AccommodationsComponent },
     // { path: 'location',         component: LocationComponent },
     // { path: 'gallery',          component: GalleryComponent },
-    // { path: 'contact',          component: ContactComponent },
     { path: 'admin',            component: CalendarComponent },
 ];
 
