@@ -24,6 +24,7 @@ export class AccommodationsComponent implements OnInit {
       max: 5,
       scale: 1.01,
       speed: 2000,
+      gyroscope: false,
     });
 
     baguetteBox.run('.gallery');

@@ -20,6 +20,7 @@ export class LandingComponent implements OnInit {
       max: 25,
       scale: 1,
       speed: 2000,
+      gyroscope: false,
     });
     this.blurnav = document.getElementsByClassName('nav-blur')[0];
     const banner = document.getElementsByClassName('banner')[0] as any;
