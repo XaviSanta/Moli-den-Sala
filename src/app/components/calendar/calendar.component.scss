@@ -3,9 +3,12 @@
 }
 
 ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
-  background-color: rgb(248 249 250);
-  border-radius: 12px;
-  box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
+  background-color: rgb(248 249 250) !important;
+  border-radius: 35px !important;
+  box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15) !important;
+  padding-left: 1.75rem !important;
+  padding-right: 1rem !important;
+  text-decoration: none !important;
 }
 
 ::ng-deep .mat-form-field {
@@ -41,4 +44,8 @@
 ::ng-deep.mat-calendar-table-header th {
   font-size: 13px;
   font-weight: bold;
+}
+
+::ng-deep.mat-form-field-underline{
+  display: none;
 }

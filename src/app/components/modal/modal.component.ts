@@ -21,7 +21,6 @@ export class NgbdModalContent implements OnInit {
 
   ngOnInit() {
     // const nextMonthBtn = $('.mat-calendar-next-button');
-    console.log(document.getElementsByName("button"));
     this.isLoading = true;
     if (this.house === 'La petita del Molí') {
       this.subscribeToPetita();

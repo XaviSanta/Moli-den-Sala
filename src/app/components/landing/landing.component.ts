@@ -8,30 +8,45 @@ import VanillaTilt from 'vanilla-tilt';
 })
 export class LandingComponent implements OnInit {
   private blurnav: any;
-
+  private banner: any;
   constructor() { }
-  scrollTo (id: string) {
-    document.getElementById(id).scrollIntoView({behavior: 'smooth'});
-  }
+  
   ngOnInit(): void {
     const element = document.querySelectorAll('.presentation-title')[0];
+    this.tiltElement(element);
+    this.setBackgroundImage();
+    this.parallax();
     this.dragElement(element);
+  }
+
+  scrollTo (id: string): void {
+    document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+  }
+
+  tiltElement(element: Element): void {
     VanillaTilt.init(element as any, {
       max: 25,
       scale: 1,
       speed: 2000,
       gyroscope: false,
     });
-    this.blurnav = document.getElementsByClassName('nav-blur')[0];
-    const banner = document.getElementsByClassName('banner')[0] as any;
+  }
+
+  setBackgroundImage(): void {
+    this.banner = document.getElementsByClassName('banner')[0] as any;
     var currentTime = new Date().getHours();
     if (6 < currentTime && currentTime < 13) {
-      banner.className = 'banner day';
+      this.banner.className = 'banner day';
     } else if (13 <= currentTime && currentTime < 20) {
-      banner.className = 'banner mid';
+      this.banner.className = 'banner mid';
     } else {
-      banner.className = 'banner night';
+      this.banner.className = 'banner night';
     }
+  }
+
+  parallax(): void {
+    this.blurnav = document.getElementsByClassName('nav-blur')[0];
+    
     // banner.className = 'day';
     // banner.className = 'night';
     // let text = document.getElementById('text');
