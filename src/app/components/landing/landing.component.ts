@@ -15,7 +15,7 @@ export class LandingComponent implements OnInit {
     const element = document.querySelectorAll('.presentation-title')[0];
     this.tiltElement(element);
     this.setBackgroundImage();
-    this.parallax();
+    // this.parallax();
     this.dragElement(element);
   }
 

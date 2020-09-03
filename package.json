@@ -45,6 +45,7 @@
     "popper.js": "1.14.4",
     "rxjs": "6.5.4",
     "rxjs-compat": "6.5.4",
+    "smooth-scrollbar": "^8.5.2",
     "vanilla-tilt": "^1.7.0",
     "zone.js": "0.10.3"
   },

@@ -1,0 +1,35 @@
+<svg id="prefix__Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 517.17 619.1">
+  <defs>
+    <linearGradient id="prefix__Orange_Yellow" x1="305.9" y1="325.39" x2="305.9" y2="325.39"
+      gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffef26" />
+      <stop offset=".02" stop-color="#ffea21" />
+      <stop offset=".1" stop-color="#fed70f" />
+      <stop offset=".19" stop-color="#fdcc04" />
+      <stop offset=".28" stop-color="#fdc800" />
+      <stop offset=".67" stop-color="#f18f34" />
+      <stop offset=".89" stop-color="#e95f32" />
+      <stop offset="1" stop-color="#e3312d" />
+    </linearGradient>
+    <linearGradient id="prefix__Orange_Yellow-2" x1="155.81" y1="438.6" x2="517.08" y2="438.6"
+      xlink:href="#prefix__Orange_Yellow" />
+    <style>
+      .prefix__cls-1 {
+        fill: none;
+        stroke: #1d1d1b;
+        stroke-miterlimit: 10
+      }
+
+      .prefix__cls-4 {
+        fill: #fff
+      }
+    </style>
+  </defs>
+  <path class="prefix__cls-1" d="M514.87 512.12l-261.99-262M252.09 262.67L266 248.89" />
+  <path fill="url(#prefix__Orange_Yellow-2)" d="M516.8 619.1L155.81 258.11h361.27l-.28 360.99z" />
+  <path class="prefix__cls-4" d="M47.18 69.29v617l267.09-264.71a61.67 61.67 0 000-87.58z"
+    transform="translate(-47.18 -69.29)" />
+  <path class="prefix__cls-4" d="M517.17 2.06l-.27 513.86-258.09-257.94L517.17 2.06z" />
+  <circle class="prefix__cls-4" cx="298.42" cy="216.33" r="56.54" />
+</svg>
