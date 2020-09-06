@@ -14,7 +14,7 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {
     const element = document.querySelectorAll('.presentation-title')[0];
     this.tiltElement(element);
-    this.setBackgroundImage();
+    // this.setBackgroundImage();
     // this.parallax();
     this.dragElement(element);
   }

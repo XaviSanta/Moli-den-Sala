@@ -24,7 +24,7 @@
 
 .banner #text {
   position: absolute;
-  top: 40%;
+  top: 35%;
 }
 .banner #text:hover {
   cursor: grab;
