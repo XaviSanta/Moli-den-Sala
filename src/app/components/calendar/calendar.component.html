@@ -18,12 +18,6 @@
 
 <div *ngIf="numNights">
   <h5>{{numNights}} noches</h5>
-  <h5>La Petita: 
-    <span *ngIf="petitaIsAvailable" class="text-success">
-      <strong>{{pricePetita}}€</strong> 
-    </span> 
-    <span class="text-danger" *ngIf="!petitaIsAvailable">Ocupada para las fechas seleccionadas. </span></h5>
-  
   <h5>La Gran: 
     <span *ngIf="granIsAvailable && !granIsShort" class="text-success">
       <strong>{{priceGran}}€</strong> 
@@ -31,6 +25,12 @@
     <span class="text-danger" *ngIf="!granIsAvailable">Ocupada para las fechas seleccionadas. </span>
     <span class="text-danger" *ngIf="granIsShort">Para las fechas seleccionadas se requiere un mínimo de 2 noches. </span>
   </h5>
+
+  <h5>La Petita: 
+    <span *ngIf="petitaIsAvailable" class="text-success">
+      <strong>{{pricePetita}}€</strong> 
+    </span> 
+    <span class="text-danger" *ngIf="!petitaIsAvailable">Ocupada para las fechas seleccionadas. </span></h5>
 </div>
 
 

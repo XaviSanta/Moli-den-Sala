@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import baguetteBox from 'baguettebox.js';
 import VanillaTilt from 'vanilla-tilt';
+import { EmitterService } from 'app/services/emitter/emitter.service';
 
 @Component({
   selector: 'app-accommodations',
@@ -11,14 +12,19 @@ import VanillaTilt from 'vanilla-tilt';
 export class AccommodationsComponent implements OnInit {
   nameHouse1: string = `La petita del Molí`;
   nameHouse2: string = `El Molí Vell d'en Sala`;
-  constructor() { }
-  
-  img1;
-  img2;
   count: number = 0;
   isHovering: boolean = false;
+  
+  hGranAvailable: number;
+  hPetitaAvailable: number;
+
+  constructor(
+    private sendMessageService: EmitterService,
+  ) { }
+  
 
   ngOnInit(): void {
+    this.subscribeAvailability();
     const element = document.querySelectorAll('.card');
     VanillaTilt.init(element as any, {
       max: 5,
@@ -28,54 +34,41 @@ export class AccommodationsComponent implements OnInit {
     });
 
     baguetteBox.run('.gallery');
-
-    this.img1 = $('#image1');
-    this.img2 = $('#image2');
-    
-    $('#image1').hover(this.onHover);
-    $('#image2').hover(this.addBackground2);
   }
 
-  private onHover(event: any): void {
-    // let isHovering = event.type === 'mouseenter';
-    // console.log();
-    // // let src = $('#image1').attr('src' );
-    // // this.changeBackground(src, event);
-    // let count = 0;
-    // let showImages = () => {
-    //   if (isHovering || count < 10) {
-    //     console.log('aa')
-    //     setTimeout(() => {
-    //       count++;
-    //       $('#image1').attr('src', `../../assets/img/moli/petita-i${count}.jpg`);
-    //       showImages();
-    //     }, 2000);
-    //   }
-    // }
+  private subscribeAvailability() {
+    this.sendMessageService.hGran.subscribe(n => {
+      var element = document.getElementById('card1');
+      var imgtop = document.getElementById('image1');
+      if(n === 1) {
+        element.classList.remove('unavailable');
+        element.classList.add('available');
+        imgtop.classList.remove('unavailable');
+        imgtop.classList.add('available');
+      }
+      if(n === 2) {
+        element.classList.remove('available');
+        element.classList.add('unavailable');
+        imgtop.classList.remove('available');
+        imgtop.classList.add('unavailable');
+      }
+    });
+    this.sendMessageService.hPetita.subscribe(n => {
+      var element = document.getElementById('card2');
+      var imgtop = document.getElementById('image2');
 
-    // isHovering ? showImages() : $('#image1').attr('src', `../../assets/img/moli/petita1.jpg`);
-  }
-
-  public showImages2(): void {
-    // setTimeout(() => {
-    //   this.count++;
-    //   $('#image1').attr('src', `../../assets/img/moli/petita-i${this.count}.jpg`);
-    //   if (this.isHovering) {
-    //     this.showImages2();
-    //   }
-    // }, 1000);
-  }
-
-  private changeBackground(src: string, event: any): void {
-    if (event.type === 'mouseenter') {
-      $('#accommodations').css('background', `url(${src})`);
-    }
-
-    if (event.type === 'mouseleave') {
-      $('#accommodations').css('background', 'white');
-    }
-  }
-
-  private addBackground2(event) {
+      if(n === 1) {
+        element.classList.remove('unavailable');
+        element.classList.add('available');
+        imgtop.classList.remove('unavailable');
+        imgtop.classList.add('available');
+      }
+      if(n === 2) {
+        element.classList.remove('available');
+        element.classList.add('unavailable');
+        imgtop.classList.remove('available');
+        imgtop.classList.add('unavailable');
+      }
+    });
   }
 }

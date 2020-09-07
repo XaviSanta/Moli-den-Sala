@@ -1,18 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DateAdapter } from '@angular/material/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { CalendarService } from 'app/services/calendar/calendar.service';
 import { FirebaseDates } from '../interfaces/firebase-date';
 import { map } from 'rxjs/operators';
 import { Location } from '@angular/common';
+import { EmitterService } from 'app/services/emitter/emitter.service';
 
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
-
 })
 export class CalendarComponent implements OnInit {
+  @Output() h1: EventEmitter<number> = new EventEmitter();
+  @Output() h2: EventEmitter<number> = new EventEmitter();
   pricePetita: string;
   priceGran: string;
   startDate: any;
@@ -41,6 +43,7 @@ export class CalendarComponent implements OnInit {
     public location: Location,
     private _adapter: DateAdapter<any>,
     private calendarService: CalendarService,
+    private sendMessageService: EmitterService,
   ) { }
 
   
@@ -104,7 +107,9 @@ export class CalendarComponent implements OnInit {
     }
 
     this.petitaIsAvailable = !this.rangeDayOverlaps(this.endDate, this.startDate, this.daysOccupiedPetita);
-
+    this.petitaIsAvailable 
+      ? this.sendMessageService.hPetita.emit(1)
+      : this.sendMessageService.hPetita.emit(2) 
     const numNights = this.numNights = Math.floor((this.endDate - this.startDate)/86400000);
     const price =  numNights > 5 
       ? numNights * 66.666666667
@@ -118,7 +123,9 @@ export class CalendarComponent implements OnInit {
     }
 
     this.granIsAvailable = !this.rangeDayOverlaps(this.endDate, this.startDate, this.daysOccupiedGran);
-
+    this.granIsAvailable 
+      ? this.sendMessageService.hGran.emit(1)
+      : this.sendMessageService.hGran.emit(2) 
     const numNights = this.numNights = Math.floor((this.endDate - this.startDate)/86400000);
     this.granIsShort = numNights < 2;
     const price =  numNights > 5 

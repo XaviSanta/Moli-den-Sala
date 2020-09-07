@@ -21,6 +21,12 @@
   transform: perspective(1000px);
 }
 
+.unavailable {
+  box-shadow: 0 6px 10px -4px rgb(255 0 0 / 62%) !important;
+}
+.available {
+  box-shadow: 0 6px 10px -4px rgb(44 222 0) !important;
+}
 .card-title {
   margin-left: 10px; 
   transform: translateZ(20px);

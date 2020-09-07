@@ -9,6 +9,10 @@
   padding-left: 1.75rem !important;
   padding-right: 1rem !important;
   text-decoration: none !important;
+
+  &:hover{
+    box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.315) !important;
+  }
 }
 
 ::ng-deep .mat-form-field {
