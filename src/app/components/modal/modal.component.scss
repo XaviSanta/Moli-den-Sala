@@ -3,6 +3,21 @@ button {
   &:hover{
     border-color: #51cbce;
   }
+  &.availabilty-btn {
+    transform: translateZ(20px);
+    // https://neumorphism.io/#f8f9fa
+    border: none;box-shadow: 0 6px 10px 0px rgba(0, 0, 0, 0.15);
+    background-color: rgb(250 250 250) !important;
+    border-radius: 35px !important;
+    box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15) !important;
+    padding-left: 1.75rem !important;
+    padding-right: 1rem !important;
+    text-decoration: none !important;
+
+    &:hover{
+      box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.315) !important;
+    }
+  }
 }
 
 body

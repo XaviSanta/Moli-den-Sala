@@ -22,11 +22,18 @@
 }
 
 .unavailable {
-  box-shadow: 0 6px 10px -4px rgb(255 0 0 / 62%) !important;
+  box-shadow: 0 6px 10px -4px rgb(255 0 0 / 62%);
+  &:not(.card-plain):hover {
+    box-shadow: 0px 12px 19px -7px rgb(255 0 0 / 62%);
+  }
 }
 .available {
-  box-shadow: 0 6px 10px -4px rgb(44 222 0) !important;
+  box-shadow: 0 6px 10px -4px rgb(44 222 0);
+  &:not(.card-plain):hover {
+    box-shadow: 0px 12px 19px -7px rgb(44 222 0);
+  }
 }
+
 .card-title {
   margin-left: 10px; 
   transform: translateZ(20px);

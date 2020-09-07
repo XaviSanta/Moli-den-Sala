@@ -41,14 +41,14 @@ export class AccommodationsComponent implements OnInit {
       var element = document.getElementById('card1');
       var imgtop = document.getElementById('image1');
       if(n === 1) {
-        element.classList.remove('unavailable');
-        element.classList.add('available');
+        // element.classList.remove('unavailable');
+        // element.classList.add('available');
         imgtop.classList.remove('unavailable');
         imgtop.classList.add('available');
       }
       if(n === 2) {
-        element.classList.remove('available');
-        element.classList.add('unavailable');
+        // element.classList.remove('available');
+        // element.classList.add('unavailable');
         imgtop.classList.remove('available');
         imgtop.classList.add('unavailable');
       }
@@ -58,14 +58,14 @@ export class AccommodationsComponent implements OnInit {
       var imgtop = document.getElementById('image2');
 
       if(n === 1) {
-        element.classList.remove('unavailable');
-        element.classList.add('available');
+        // element.classList.remove('unavailable');
+        // element.classList.add('available');
         imgtop.classList.remove('unavailable');
         imgtop.classList.add('available');
       }
       if(n === 2) {
-        element.classList.remove('available');
-        element.classList.add('unavailable');
+        // element.classList.remove('available');
+        // element.classList.add('unavailable');
         imgtop.classList.remove('available');
         imgtop.classList.add('unavailable');
       }
