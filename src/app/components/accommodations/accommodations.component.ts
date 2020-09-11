@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
 import baguetteBox from 'baguettebox.js';
 import VanillaTilt from 'vanilla-tilt';
 import { EmitterService } from 'app/services/emitter/emitter.service';
