@@ -36,7 +36,7 @@
         }
         p{
             margin: 0px 0px;
-            color: #9A9A9A !important;
+            color: #353535 !important;
             text-transform: uppercase;
             font-weight: 600;
             font-size: 12px;
@@ -44,7 +44,7 @@
             padding: 15px 0;
         }
         p:hover{
-            color: #403D39 !important;
+            color: #000000 !important;
         }
     }
     .navbar-nav{
@@ -53,7 +53,7 @@
             margin: $navbar-margin-a;
             padding: $navbar-padding-a;
             opacity: .8;
-            font-size: $font-size-small;
+            font-size: $font-size-base;
             text-transform: uppercase;
             font-weight: 600;
             color: #333333;
@@ -161,7 +161,8 @@
     .navbar-brand{
         color: $white-color;
         @include opacity(.9);
-
+        font-size: $font-size-medium;
+        
         &:focus,
         &:hover{
             background-color: transparent;
@@ -231,7 +232,7 @@
     }
     .navbar-nav{
         .nav-item .nav-link:not(.btn){
-            color: $dark-gray;
+            color: $black-color;
         }
 
         .active .nav-link,
@@ -367,7 +368,7 @@
 .nav-tabs-navigation{
     &:last-child{
         .nav-stacked{
-            border-right: 1px solid #F1EAE0;
+            border-right: 1px solid #ffffff;
             font-size: 16px;
             font-weight: 600;
             padding: 20px 0;

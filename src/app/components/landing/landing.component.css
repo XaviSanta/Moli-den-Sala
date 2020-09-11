@@ -107,6 +107,9 @@
   .scroll-y {
     fill: white;
   }
+  .clouds {
+    display: none;
+  }
 }
 @keyframes translate {
   0% {

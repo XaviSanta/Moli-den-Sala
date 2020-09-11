@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
     <div class="container">
         <div class="navbar-translate">
-            <a class="navbar-brand" [routerLink]="['/']">MOLÍ D'EN SALA</a>
+            <a class="navbar-brand" [routerLink]="['/']" (click)="scrollTop()">
+                MOLÍ D'EN SALA
+            </a>
             <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
                 <span class="navbar-toggler-bar"></span>
                 <span class="navbar-toggler-bar"></span>
@@ -58,17 +60,17 @@
                         href="https://api.whatsapp.com/send?phone=34639811282"
                         onclick="window.open('https://api.whatsapp.com/send?phone=34656642994','popup','width=1000,height=600'); return false;">
                         <i class="fa fa-whatsapp"></i>
-                        <p class="d-lg-none">Whatsap</p>
+                        <p class="d-lg-none">Whatsapp</p>
                     </a>
                 </li>
                 <li class="nav-item" >
-                    <a class="nav-link" rel="tooltip" title="Síguenos en Facebook" data-placement="bottom" href="https://www.facebook.com/molidensala" target="_blank">
+                    <a class="nav-link" rel="tooltip" title="Síguenos en Facebook" data-placement="bottom" href="https://www.facebook.com/molidensala" target="_blank" rel="noreferrer">
                         <i class="fa fa-facebook-square"></i>
                         <p class="d-lg-none">Facebook</p>
                     </a>
                 </li>
                 <li class="nav-item" >
-                    <a class="nav-link" rel="tooltip" title="Síguenos en Instagram" data-placement="bottom" href="https://www.instagram.com/molidensala/" target="_blank">
+                    <a class="nav-link" rel="tooltip" title="Síguenos en Instagram" data-placement="bottom" href="https://www.instagram.com/molidensala/" target="_blank" rel="noreferrer">
                         <i class="fa fa-instagram"></i>
                         <p class="d-lg-none">Instagram</p>
                     </a>
