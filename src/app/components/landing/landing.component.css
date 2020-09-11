@@ -5,19 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.day {
-  background: url('assets/img/landing3-l.jpg');
-  background-size: cover;
-  background-position: center;
-}
-.mid {
-  background: url('assets/img/landing2-l.jpg');
-  background-size: cover;
-  background-position: center;
-}
-.night {
-  background: url('assets/img/landing1-l.jpg');
+  background: url('assets/img/landing/landing2-l.jpg');
   background-size: cover;
   background-position: center;
 }
