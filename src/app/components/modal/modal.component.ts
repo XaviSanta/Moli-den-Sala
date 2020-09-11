@@ -3,7 +3,6 @@ import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import { CalendarService } from 'app/services/calendar/calendar.service';
 import { map } from 'rxjs/operators';
 import { FirebaseDates } from '../interfaces/firebase-date';
-import * as $ from 'jquery';
 
 @Component({
     selector: 'app-modal-content',

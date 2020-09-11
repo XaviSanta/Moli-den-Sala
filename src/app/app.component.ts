@@ -2,8 +2,7 @@ import { Component, OnInit, Inject, Renderer2, ElementRef, ViewChild } from '@an
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
-import { DOCUMENT } from '@angular/common';
-import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
+import { DOCUMENT, Location } from '@angular/common';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @Component({
