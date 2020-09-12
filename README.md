@@ -5,7 +5,7 @@ A web for a real estate company where users can see prices, availability, galler
 ![Logo](src/assets/img/M3.svg)
 ![screenshot1](src/assets/img/screenshot1.png)
 
-[Google Play | Power Mod Calculator](https://xavisanta.github.io/Moli-den-Sala)
+[](https://xavisanta.github.io/Moli-den-Sala)
 
 
 This web does: 
