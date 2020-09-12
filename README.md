@@ -3,7 +3,6 @@
 A web for a real estate company where users can see prices, availability, gallery, and where the owner can set easily the days where the property is occupied.
 
 ![screenshot1](src/assets/img/screenshotMoli.PNG)
-![screenshot2](src/assets/img/screenshotMoli.PNG)
 
 [](https://xavisanta.github.io/Moli-den-Sala)
 
