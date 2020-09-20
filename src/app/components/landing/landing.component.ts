@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import VanillaTilt from 'vanilla-tilt';
+import lozad from 'lozad';
 
 @Component({
   selector: 'app-landing',
@@ -13,6 +14,8 @@ export class LandingComponent implements OnInit {
   
   ngOnInit(): void {
     const element = document.querySelectorAll('.presentation-title')[0];
+    const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+    observer.observe();
     this.tiltElement(element);
     // this.setBackgroundImage();
     // this.parallax();

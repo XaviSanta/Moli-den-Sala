@@ -38,6 +38,7 @@
     "firebase": "^7.19.0",
     "font-awesome": "^4.7.0",
     "jw-bootstrap-switch-ng2": "2.0.1",
+    "lozad": "^1.16.0",
     "popper.js": "1.14.4",
     "rxjs": "6.5.4",
     "rxjs-compat": "6.5.4",
