@@ -14,7 +14,6 @@ body {
 .container.gallery-container {
   background-color: #fff;
   color: #35373a;
-  min-height: 100vh;
 }
 
 .gallery-container h1 {
@@ -88,5 +87,9 @@ body {
 @media(max-width: 768px) {
   body {
       padding: 0;
+  }
+
+  .hide-sm {
+    display: none;
   }
 }

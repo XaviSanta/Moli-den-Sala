@@ -1,14 +1,14 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Mol\u00ed d'en Sala",
+    "short_name": "Mol\u00ed d'en Sala",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
+            "src": "/android-chrome-192x192.png?v=qAMMnM3PdK",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png",
+            "src": "/android-chrome-512x512.png?v=qAMMnM3PdK",
             "sizes": "512x512",
             "type": "image/png"
         }

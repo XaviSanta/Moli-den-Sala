@@ -13,9 +13,9 @@ export class LandingComponent implements OnInit {
   constructor() { }
   
   ngOnInit(): void {
-    const element = document.querySelectorAll('.presentation-title')[0];
     const observer = lozad(); // lazy loads elements with default selector as '.lozad'
     observer.observe();
+    const element = document.querySelectorAll('.presentation-title')[0];
     this.tiltElement(element);
     // this.setBackgroundImage();
     // this.parallax();
